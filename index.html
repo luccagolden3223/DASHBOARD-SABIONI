@@ -691,7 +691,7 @@ const STAGES = ["pendente","gravado","editado","publicado"];
 const STAGE_LABEL = {pendente:"Pendente", gravado:"Gravado", editado:"Editado", publicado:"Publicado"};
 
 /* ===================== STATE ===================== */
-const DEFAULT_STATE = () => ({status:"pendente", responsavel:"", notas:""});
+const DEFAULT_STATE = () => ({status:"pendente", responsavel:"", notas:"", autoDetected:false});
 const state = {};
 REELS.forEach(r => state[r.id] = DEFAULT_STATE());
 
@@ -769,7 +769,7 @@ function saveReel(id, patch){
 }
 
 function setStatus(id, stage){
-  saveReel(id, {status: stage, updatedAt: new Date().toISOString()});
+  saveReel(id, {status: stage, autoDetected:false, updatedAt: new Date().toISOString()});
   renderStepper(id);
   renderKpis();
   renderWeekCards();
@@ -872,7 +872,8 @@ function stepperHtml(id){
     const filled = i <= curIdx;
     return `<button class="stepper__dot no-toggle" data-stage="${s}" data-id="${id}" title="${STAGE_LABEL[s]}" style="${filled ? `background:${color}; border-color:${color};` : ''}"></button>`;
   }).join('');
-  return `<div class="stepper__track"><div class="stepper no-toggle">${dots}</div><span class="stepper__label" style="color:var(--stage-${cur})">${STAGE_LABEL[cur]}</span></div>`;
+  const auto = (cur === 'gravado' && state[id].autoDetected) ? ' <span title="Detectado automaticamente pelo vídeo na pasta do Drive">☁️</span>' : '';
+  return `<div class="stepper__track"><div class="stepper no-toggle">${dots}</div><span class="stepper__label" style="color:var(--stage-${cur})">${STAGE_LABEL[cur]}${auto}</span></div>`;
 }
 function renderStepper(id){
   const el = document.querySelector(`.reel-row[data-id="${id}"] [data-status-slot]`);

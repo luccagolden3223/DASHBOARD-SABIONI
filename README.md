@@ -31,3 +31,4 @@ Pronto — o link que a Vercel te dá (algo como `reels-40mais-dashboard.vercel.
 ## Atualizar o conteúdo dos Reels
 
 O roteiro, cenário, hashtags etc. de cada Reel são dados fixos dentro de `index.html` (array `REELS`). Para mudar o texto de um Reel, edite esse array e faça `git push` de novo — a Vercel redeploya sozinha a cada push na branch `main`.
+

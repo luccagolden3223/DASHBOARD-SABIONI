@@ -1,0 +1,9 @@
+{
+  "name": "reels-40mais-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Painel de status dos Reels 40+ (Dr. Vitor Sabioni) — front estático + API serverless na Vercel.",
+  "dependencies": {
+    "@upstash/redis": "^1.34.3"
+  }
+}

@@ -1,0 +1,1097 @@
+<title>Reels 40+</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#F6F5EF; --surface:#FFFFFF; --surface-2:#EFECE1; --surface-3:#E9E4D3;
+  --border:#DEDACB; --border-strong:#C9C4AF;
+  --text:#1B2420; --text-muted:#5C665F; --text-faint:#8B9289;
+  --brand:#163B2E; --brand-strong:#0E2A20; --brand-tint: rgba(22,59,46,.08);
+  --accent:#9C7325; --accent-strong:#7C5A1B; --accent-tint: rgba(156,115,37,.13);
+  --sidebar-bg:#153A2E; --sidebar-bg-active:#1F4E3C; --sidebar-text:#F3EFE2;
+  --sidebar-text-muted:#AEC1B4; --sidebar-accent:#D8AA3F; --sidebar-border:rgba(255,255,255,.09);
+  --callout-bg:#FBF3DC; --callout-border:#C9932F; --callout-text:#4A3B14;
+  --stage-pendente:#A6A18E; --stage-gravado:#2F6396; --stage-editado:#7C519F; --stage-publicado:#2C7F4F;
+  --chip-identificacao:#A9583F; --chip-autoridade:#33628F; --chip-quebra:#7C519F;
+  --chip-posicionamento:#9C7325; --chip-conversao:#1B5A43; --chip-prova:#296E68;
+  --cat-consultorio:#163B2E; --cat-academia:#AB6435; --cat-externa:#296E68; --cat-casa:#9C7325; --cat-carro:#7C519F;
+  --shadow: 0 1px 2px rgba(27,36,32,.07), 0 10px 28px -14px rgba(27,36,32,.24);
+  --radius-s:6px; --radius-m:10px; --radius-l:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11160F; --surface:#171F1A; --surface-2:#1D2620; --surface-3:#243028;
+    --border:#2C3830; --border-strong:#3A483F;
+    --text:#EAE7DA; --text-muted:#A7B1A5; --text-faint:#78826F;
+    --brand:#3C7E62; --brand-strong:#1B4736; --brand-tint: rgba(60,126,98,.18);
+    --accent:#D9AE55; --accent-strong:#EABE6C; --accent-tint: rgba(217,174,85,.16);
+    --sidebar-bg:#0D251E; --sidebar-bg-active:#163A2E; --sidebar-text:#F1EDDF;
+    --sidebar-text-muted:#98AC9E; --sidebar-accent:#E3B54B; --sidebar-border:rgba(255,255,255,.08);
+    --callout-bg:#28230F; --callout-border:#D9AE55; --callout-text:#EBDDAF;
+    --stage-pendente:#8A9186; --stage-gravado:#6FA3D6; --stage-editado:#B084D6; --stage-publicado:#49BD7A;
+    --chip-identificacao:#D68764; --chip-autoridade:#6FA3D6; --chip-quebra:#B084D6;
+    --chip-posicionamento:#D9AE55; --chip-conversao:#4AA07F; --chip-prova:#49B0A8;
+    --cat-consultorio:#4AA07F; --cat-academia:#D68764; --cat-externa:#49B0A8; --cat-casa:#D9AE55; --cat-carro:#B084D6;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11160F; --surface:#171F1A; --surface-2:#1D2620; --surface-3:#243028;
+  --border:#2C3830; --border-strong:#3A483F;
+  --text:#EAE7DA; --text-muted:#A7B1A5; --text-faint:#78826F;
+  --brand:#3C7E62; --brand-strong:#1B4736; --brand-tint: rgba(60,126,98,.18);
+  --accent:#D9AE55; --accent-strong:#EABE6C; --accent-tint: rgba(217,174,85,.16);
+  --sidebar-bg:#0D251E; --sidebar-bg-active:#163A2E; --sidebar-text:#F1EDDF;
+  --sidebar-text-muted:#98AC9E; --sidebar-accent:#E3B54B; --sidebar-border:rgba(255,255,255,.08);
+  --callout-bg:#28230F; --callout-border:#D9AE55; --callout-text:#EBDDAF;
+  --stage-pendente:#8A9186; --stage-gravado:#6FA3D6; --stage-editado:#B084D6; --stage-publicado:#49BD7A;
+  --chip-identificacao:#D68764; --chip-autoridade:#6FA3D6; --chip-quebra:#B084D6;
+  --chip-posicionamento:#D9AE55; --chip-conversao:#4AA07F; --chip-prova:#49B0A8;
+  --cat-consultorio:#4AA07F; --cat-academia:#D68764; --cat-externa:#49B0A8; --cat-casa:#D9AE55; --cat-carro:#B084D6;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box;}
+body{background:var(--bg); color:var(--text); font-family:"IBM Plex Sans",-apple-system,sans-serif; font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif; text-wrap:balance; margin:0; color:var(--text); font-weight:600;}
+p{margin:0;}
+button{font:inherit; color:inherit;}
+input,textarea,select{font:inherit; color:inherit;}
+::selection{background:var(--accent-tint);}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px;}
+.mono{font-family:"IBM Plex Mono",monospace;}
+.tnum{font-variant-numeric: tabular-nums;}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
+
+/* ============ SHELL ============ */
+#app{display:flex; min-height:100vh; background:var(--bg);}
+.sidebar{
+  width:246px; flex:none; background:var(--sidebar-bg); color:var(--sidebar-text);
+  display:flex; flex-direction:column; padding:20px 14px; gap:18px;
+  border-right:1px solid var(--sidebar-border);
+}
+.brand{display:flex; flex-direction:column; gap:2px; padding:4px 10px 14px; border-bottom:1px solid var(--sidebar-border);}
+.brand__eyebrow{font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:var(--sidebar-accent);}
+.brand__name{font-family:"Fraunces",serif; font-size:19px; font-weight:600; color:var(--sidebar-text); line-height:1.2;}
+.brand__sub{font-size:11px; color:var(--sidebar-text-muted);}
+.nav{display:flex; flex-direction:column; gap:2px; flex:1;}
+.nav__btn{
+  display:flex; align-items:center; gap:10px; text-align:left; width:100%;
+  padding:9px 10px; border-radius:var(--radius-s); background:transparent; border:none; cursor:pointer;
+  color:var(--sidebar-text-muted); font-size:13px; font-weight:500; transition:background .12s,color .12s;
+}
+.nav__btn svg{width:16px; height:16px; flex:none; opacity:.85;}
+.nav__btn:hover{background:rgba(255,255,255,.06); color:var(--sidebar-text);}
+.nav__btn.active{background:var(--sidebar-bg-active); color:var(--sidebar-text);}
+.nav__btn.active svg{opacity:1;}
+.nav__count{margin-left:auto; font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--sidebar-text-muted); background:rgba(255,255,255,.06); padding:1px 6px; border-radius:20px;}
+.sidebar__foot{border-top:1px solid var(--sidebar-border); padding-top:12px; font-size:11px; color:var(--sidebar-text-muted); display:flex; flex-direction:column; gap:6px;}
+.sync{display:flex; align-items:center; gap:6px;}
+.sync__dot{width:7px; height:7px; border-radius:50%; background:#49BD7A; box-shadow:0 0 0 3px rgba(73,189,122,.22);}
+.sync__dot.off{background:var(--text-faint); box-shadow:none;}
+.sync.offline{color:var(--sidebar-text-muted);}
+
+.main{flex:1; min-width:0; display:flex; flex-direction:column;}
+.topbar{
+  position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--border);
+  padding:16px 28px; display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.topbar__title{font-size:20px;}
+.topbar__desc{font-size:12.5px; color:var(--text-muted); margin-top:2px;}
+.content{padding:24px 28px 64px; max-width:1180px; width:100%; margin:0 auto;}
+.view{display:none; flex-direction:column; gap:28px;}
+.view.active{display:flex;}
+
+/* ============ PRIMITIVES ============ */
+.section-bar{
+  background:var(--brand); color:#F4F1E6; padding:9px 16px; border-radius:var(--radius-s);
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:600;
+}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); box-shadow:var(--shadow);}
+.callout{background:var(--callout-bg); border-left:3px solid var(--callout-border); border-radius:0 var(--radius-m) var(--radius-m) 0; padding:14px 18px; color:var(--callout-text);}
+.callout h4{color:var(--callout-text); font-size:13px; text-transform:uppercase; letter-spacing:.06em; font-family:"IBM Plex Mono",monospace; margin-bottom:6px; font-weight:600;}
+.callout p, .callout li{color:var(--callout-text); font-size:13px; line-height:1.55;}
+.callout ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:6px;}
+
+.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media (max-width:920px){ .grid-4{grid-template-columns:repeat(2,1fr);} .grid-2{grid-template-columns:1fr;} }
+
+.kpi{padding:16px 18px; display:flex; flex-direction:column; gap:8px;}
+.kpi__label{font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--text-muted); font-weight:600;}
+.kpi__value{font-family:"Fraunces",serif; font-size:30px; font-weight:600;}
+.kpi__value span{font-size:16px; color:var(--text-faint); font-weight:400;}
+.kpi__bar{height:5px; border-radius:3px; background:var(--surface-2); overflow:hidden;}
+.kpi__bar i{display:block; height:100%; border-radius:3px;}
+
+.badge{display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; padding:3px 9px; border-radius:20px; border:1px solid currentColor; white-space:nowrap;}
+.chip{font-size:10.5px; font-weight:600; padding:2px 8px; border-radius:20px; border:1px solid; white-space:nowrap; letter-spacing:.01em;}
+.chip--identificacao{color:var(--chip-identificacao); border-color:var(--chip-identificacao); background:color-mix(in srgb, var(--chip-identificacao) 14%, transparent);}
+.chip--autoridade{color:var(--chip-autoridade); border-color:var(--chip-autoridade); background:color-mix(in srgb, var(--chip-autoridade) 14%, transparent);}
+.chip--quebra{color:var(--chip-quebra); border-color:var(--chip-quebra); background:color-mix(in srgb, var(--chip-quebra) 14%, transparent);}
+.chip--posicionamento{color:var(--chip-posicionamento); border-color:var(--chip-posicionamento); background:color-mix(in srgb, var(--chip-posicionamento) 14%, transparent);}
+.chip--conversao{color:var(--chip-conversao); border-color:var(--chip-conversao); background:color-mix(in srgb, var(--chip-conversao) 14%, transparent);}
+.chip--prova{color:var(--chip-prova); border-color:var(--chip-prova); background:color-mix(in srgb, var(--chip-prova) 14%, transparent);}
+.tag{font-size:11px; color:var(--text-faint); padding:2px 8px; border-radius:20px; background:var(--surface-2); border:1px solid var(--border);}
+
+/* ============ OVERVIEW ============ */
+.week-cards{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+@media (max-width:920px){ .week-cards{grid-template-columns:repeat(2,1fr);} }
+.week-card{padding:16px; display:flex; flex-direction:column; gap:10px;}
+.week-card__num{font-family:"Fraunces",serif; font-size:26px; color:var(--accent);}
+.week-card__title{font-size:14px; font-weight:600;}
+.week-card__obj{font-size:12px; color:var(--text-muted); line-height:1.5;}
+.week-card__indicador{font-size:11.5px; color:var(--text-faint); border-top:1px dashed var(--border); padding-top:8px; line-height:1.5;}
+.week-card__progress{display:flex; align-items:center; gap:8px; margin-top:2px;}
+.week-card__bar{flex:1; height:5px; border-radius:3px; background:var(--surface-2); overflow:hidden;}
+.week-card__bar i{display:block; height:100%; background:var(--stage-publicado);}
+.week-card__pct{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text-muted);}
+
+.barlist{display:flex; flex-direction:column; gap:10px;}
+.barlist__row{display:grid; grid-template-columns:150px 1fr 60px; align-items:center; gap:10px;}
+.barlist__label{font-size:12.5px; font-weight:500;}
+.barlist__track{height:10px; background:var(--surface-2); border-radius:4px; overflow:hidden;}
+.barlist__fill{height:100%; border-radius:4px;}
+.barlist__val{font-family:"IBM Plex Mono",monospace; font-size:12px; text-align:right; color:var(--text-muted);}
+@media (max-width:640px){ .barlist__row{grid-template-columns:100px 1fr 44px;} }
+
+.section-title{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:4px;}
+.section-title h2{font-size:18px;}
+.section-title p{font-size:12.5px; color:var(--text-muted);}
+
+/* ============ ROTEIROS ============ */
+.filters{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+.filters select, .filters input[type="search"]{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-s);
+  padding:7px 10px; font-size:12.5px; color:var(--text);
+}
+.filters input[type="search"]{min-width:200px; flex:1;}
+.filters__reset{font-size:12px; color:var(--accent-strong); background:none; border:none; cursor:pointer; padding:6px 4px; text-decoration:underline; text-underline-offset:2px;}
+.legend{display:flex; flex-wrap:wrap; gap:12px; font-size:11.5px; color:var(--text-muted);}
+.legend__item{display:flex; align-items:center; gap:5px;}
+.legend__dot{width:8px; height:8px; border-radius:50%; flex:none;}
+
+.week-group{display:flex; flex-direction:column; gap:10px;}
+.week-group__head{display:flex; align-items:center; gap:10px; padding:2px 2px;}
+.week-group__head h3{font-size:14px;}
+.week-group__head .tag{font-size:10.5px;}
+
+.reel-row{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); overflow:hidden;}
+.reel-row__head{
+  display:grid; grid-template-columns:52px 1.6fr 1fr auto 26px; gap:14px; align-items:center;
+  padding:12px 14px; cursor:pointer;
+}
+.reel-row__head:hover{background:var(--surface-2);}
+.reel-row__day{display:flex; flex-direction:column; align-items:center; line-height:1.15;}
+.reel-row__daylabel{font-family:"IBM Plex Mono",monospace; font-size:9.5px; text-transform:uppercase; color:var(--text-faint); letter-spacing:.05em;}
+.reel-row__num{font-family:"Fraunces",serif; font-size:19px; font-weight:600; color:var(--brand);}
+.reel-row__title{display:flex; flex-direction:column; gap:3px; min-width:0;}
+.reel-row__titletext{font-size:13.5px; font-weight:600;}
+.reel-row__tags{font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.03em;}
+.reel-row__meta{display:flex; flex-direction:column; gap:4px; font-size:11.5px; color:var(--text-muted); min-width:0;}
+.reel-row__quadro{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.reel-row__cenario{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--text-faint);}
+.reel-row__side{display:flex; flex-direction:column; align-items:flex-end; gap:6px;}
+.chevron{width:16px; height:16px; color:var(--text-faint); transition:transform .15s; flex:none; justify-self:end;}
+.reel-row.open .chevron{transform:rotate(180deg);}
+
+.stepper{display:flex; align-items:center; gap:4px;}
+.stepper__dot{width:16px; height:16px; border-radius:50%; border:2px solid var(--border-strong); background:var(--surface); cursor:pointer; padding:0; transition:background .12s,border-color .12s;}
+.stepper__dot:hover{border-color:var(--accent);}
+.stepper__track{display:flex; flex-direction:column; align-items:flex-end; gap:4px;}
+.stepper__label{font-size:10.5px; font-weight:600; color:var(--text-muted); white-space:nowrap;}
+
+.input--sm{width:132px; padding:5px 8px; border-radius:var(--radius-s); border:1px solid var(--border); background:var(--surface); font-size:11.5px;}
+.input--sm::placeholder{color:var(--text-faint);}
+
+.reel-row__detail{border-top:1px solid var(--border); background:var(--surface-2); padding:18px 20px; display:grid; grid-template-columns:1.5fr 1fr; gap:22px;}
+@media (max-width:800px){ .reel-row__detail{grid-template-columns:1fr;} }
+.detail__gancho{background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 var(--radius-m) var(--radius-m) 0; padding:12px 14px; font-family:"Fraunces",serif; font-size:15px; font-weight:500; line-height:1.4;}
+.detail__label{font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--text-faint); font-weight:600; margin-bottom:6px; display:block;}
+.detail__steps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; counter-reset:step;}
+.detail__steps li{display:flex; gap:8px; font-size:12.5px; line-height:1.5;}
+.detail__steps li::before{counter-increment:step; content:counter(step); flex:none; width:18px; height:18px; border-radius:50%; background:var(--brand-tint); color:var(--brand); font-family:"IBM Plex Mono",monospace; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center; margin-top:1px;}
+.detail__field{margin-top:14px;}
+.detail__meta-row{display:flex; flex-wrap:wrap; gap:8px;}
+.detail__legenda{font-size:12.5px; color:var(--text-muted); line-height:1.55;}
+.hashtags{display:flex; flex-wrap:wrap; gap:5px;}
+.hashtag{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--brand); background:var(--brand-tint); padding:2px 7px; border-radius:5px;}
+.textarea{width:100%; min-height:56px; resize:vertical; padding:8px 10px; border-radius:var(--radius-s); border:1px solid var(--border); background:var(--surface); font-size:12.5px;}
+.no-results{padding:32px; text-align:center; color:var(--text-muted); font-size:13px;}
+
+/* ============ CENARIOS / QUADROS TABLES ============ */
+.table{width:100%; border-collapse:collapse;}
+.table th{text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); font-weight:600; padding:8px 12px; border-bottom:1px solid var(--border-strong);}
+.table td{padding:11px 12px; border-bottom:1px solid var(--border); font-size:12.5px; vertical-align:top;}
+.table tr:last-child td{border-bottom:none;}
+.table-wrap{overflow-x:auto;}
+.reelchips{display:flex; flex-wrap:wrap; gap:4px;}
+.reelchip{font-family:"IBM Plex Mono",monospace; font-size:10.5px; background:var(--surface-2); border:1px solid var(--border); padding:1px 6px; border-radius:5px; color:var(--text-muted);}
+
+/* ============ PILARES / TRILHAS ============ */
+.trilha-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+@media (max-width:920px){ .trilha-grid{grid-template-columns:repeat(2,1fr);} }
+.trilha-card{padding:16px; display:flex; flex-direction:column; gap:10px;}
+.waveform{display:flex; align-items:flex-end; gap:3px; height:26px;}
+.waveform i{width:4px; border-radius:2px; background:var(--accent); display:block;}
+.trilha-card__title{font-size:14px; font-weight:600;}
+.trilha-card__uso{font-size:11.5px; color:var(--text-muted); line-height:1.5;}
+.trilha-card__desc{font-size:11.5px; color:var(--text-faint); border-top:1px dashed var(--border); padding-top:8px;}
+
+/* ============ GANCHOS / CAIXINHA ============ */
+.gancho-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+@media (max-width:920px){ .gancho-grid{grid-template-columns:1fr;} }
+.gancho-card{padding:16px;}
+.gancho-card h4{font-size:12.5px; text-transform:uppercase; letter-spacing:.03em; color:var(--accent-strong); margin-bottom:10px; font-family:"IBM Plex Sans"; font-weight:700;}
+.gancho-card ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+.gancho-card li{font-family:"Fraunces",serif; font-size:13.5px; line-height:1.45; padding-left:14px; border-left:2px solid var(--border-strong); font-weight:500;}
+
+.steps-flow{display:flex; gap:0; flex-wrap:wrap;}
+.step-flow{flex:1; min-width:150px; padding:14px; position:relative;}
+.step-flow:not(:last-child)::after{content:"→"; position:absolute; right:-14px; top:16px; color:var(--text-faint); font-size:14px;}
+@media (max-width:800px){ .step-flow:not(:last-child)::after{content:"↓"; right:auto; left:16px; top:auto; bottom:-14px;} }
+.step-flow__n{font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--accent); font-weight:700;}
+.step-flow__title{font-size:13px; font-weight:600; margin:4px 0 6px;}
+.step-flow__desc{font-size:11.5px; color:var(--text-muted); line-height:1.5;}
+.step-flow__where{font-size:10.5px; color:var(--text-faint); margin-top:6px; font-family:"IBM Plex Mono",monospace;}
+
+.bullets{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:7px; font-size:12.5px; line-height:1.55; color:var(--text-muted);}
+
+/* ============ RESPONSIVE SHELL ============ */
+@media (max-width:880px){
+  #app{flex-direction:column;}
+  .sidebar{width:100%; flex-direction:row; align-items:center; padding:10px 14px; overflow-x:auto; gap:14px;}
+  .brand{border:none; padding:0; flex:none;}
+  .brand__sub{display:none;}
+  .nav{flex-direction:row; flex:none;}
+  .nav__btn span.nav__count{display:none;}
+  .sidebar__foot{display:none;}
+  .content{padding:20px 16px 48px;}
+  .topbar{padding:14px 16px;}
+}
+</style>
+
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand__eyebrow">Grupo GH</span>
+      <span class="brand__name">Reels 40+</span>
+      <span class="brand__sub">Dr. Vitor Sabioni · Guia de Roteiros</span>
+    </div>
+    <nav class="nav" id="nav">
+      <button class="nav__btn" data-view="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Visão geral
+      </button>
+      <button class="nav__btn" data-view="roteiros">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+        Roteiros <span class="nav__count">20</span>
+      </button>
+      <button class="nav__btn" data-view="cenarios">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg>
+        Cenários &amp; quadros
+      </button>
+      <button class="nav__btn" data-view="pilares">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V10M11 19V5M18 19v-7"/></svg>
+        Pilares &amp; trilhas
+      </button>
+      <button class="nav__btn" data-view="compliance">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+        Publicidade médica
+      </button>
+      <button class="nav__btn" data-view="ganchos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+        Banco de ganchos
+      </button>
+    </nav>
+    <div class="sidebar__foot">
+      <div class="sync" id="syncBadge"><span class="sync__dot"></span><span id="syncLabel">Conectando…</span></div>
+      <span>Editável por quem tiver o link</span>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar__title mono" id="pageTitle" style="font-family:'Fraunces',serif; font-size:20px;">Visão geral</div>
+        <div class="topbar__desc" id="pageDesc">4 semanas · 20 Reels prontos para gravar, sem decisão na hora da gravação.</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- ===================== OVERVIEW ===================== -->
+      <section class="view active" id="view-overview">
+        <div class="grid-4" id="kpiRow"></div>
+
+        <div class="callout">
+          <h4>A regra dos 80%</h4>
+          <p>Oitenta por cento pronto e publicado vence cem por cento perfeito e parado. Não regravar cinco vezes por causa de uma palavra, não trocar o posicionamento porque três conteúdos foram mal. Ciclos de teste, nunca ciclos de dúvida.</p>
+        </div>
+
+        <div>
+          <div class="section-title"><h2>As 4 semanas</h2><p>Grave em lote na terça, publique de segunda a sexta.</p></div>
+          <div class="week-cards" id="weekCards"></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card" style="padding:18px;">
+            <div class="section-title"><h2 style="font-size:15px;">Peso dos 7 pilares</h2></div>
+            <div class="barlist" id="pilarBars" style="margin-top:12px;"></div>
+          </div>
+          <div class="card" style="padding:18px;">
+            <div class="section-title"><h2 style="font-size:15px;">Reels por cenário</h2></div>
+            <div class="barlist" id="cenarioBars" style="margin-top:12px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ROTEIROS ===================== -->
+      <section class="view" id="view-roteiros">
+        <div class="callout">
+          <h4>Rotina da terça</h4>
+          <ul>
+            <li>Grave os 5 Reels da semana em lote, 60–90 min. A ordem do guia é a ordem de gravação.</li>
+            <li>Troque de roupa entre os Reels para os cinco não parecerem o mesmo vídeo.</li>
+            <li>Nada de "oi, eu sou o Dr. Vitor" — nenhum dos 20 abre com apresentação, de propósito.</li>
+            <li>CTA de contato só no Reel 20. Nos outros dezenove: salvar, comentar ou mandar pra amiga.</li>
+          </ul>
+        </div>
+
+        <div class="filters">
+          <input type="search" id="fSearch" placeholder="Buscar por título, quadro ou hashtag…">
+          <select id="fSemana"><option value="">Todas as semanas</option><option value="1">Semana 1</option><option value="2">Semana 2</option><option value="3">Semana 3</option><option value="4">Semana 4</option></select>
+          <select id="fPilar"><option value="">Todos os pilares</option></select>
+          <select id="fCenario"><option value="">Todos os cenários</option></select>
+          <select id="fStatus"><option value="">Todos os status</option><option value="pendente">Pendente</option><option value="gravado">Gravado</option><option value="editado">Editado</option><option value="publicado">Publicado</option></select>
+          <button class="filters__reset" id="fReset">Limpar filtros</button>
+        </div>
+        <div class="legend">
+          <span class="legend__item"><span class="legend__dot" style="background:var(--stage-pendente)"></span>Pendente</span>
+          <span class="legend__item"><span class="legend__dot" style="background:var(--stage-gravado)"></span>Gravado</span>
+          <span class="legend__item"><span class="legend__dot" style="background:var(--stage-editado)"></span>Editado</span>
+          <span class="legend__item"><span class="legend__dot" style="background:var(--stage-publicado)"></span>Publicado</span>
+          <span class="legend__item" style="margin-left:auto;">Clique num Reel para ver o roteiro completo</span>
+        </div>
+
+        <div id="reelList" style="display:flex; flex-direction:column; gap:22px;"></div>
+      </section>
+
+      <!-- ===================== CENARIOS ===================== -->
+      <section class="view" id="view-cenarios">
+        <div class="callout">
+          <h4>O mapa de cenários</h4>
+          <p>O gargalo era visual: quase todo vídeo no carro, sempre no mesmo enquadramento. Por isso cada Reel já vem com o cenário definido — dos 20, apenas um é no carro, e mesmo assim com enquadramento diferente do habitual.</p>
+        </div>
+        <div class="card table-wrap">
+          <table class="table" id="tblCenarios">
+            <thead><tr><th>Cenário</th><th>Reels</th><th>Por que ele entra</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="section-title"><h2>Os seis quadros</h2><p>Formato fixo elimina a decisão do que gravar.</p></div>
+        <div class="card table-wrap">
+          <table class="table" id="tblQuadros">
+            <thead><tr><th>Quadro</th><th>O que é</th><th>Reels</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===================== PILARES / TRILHAS ===================== -->
+      <section class="view" id="view-pilares">
+        <div class="card table-wrap">
+          <table class="table" id="tblPilares">
+            <thead><tr><th>Pilar</th><th>Peso</th><th>Função</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="section-title"><h2>Guia de trilhas</h2><p>Cada camada de conteúdo tem sua própria trilha sonora.</p></div>
+        <div class="trilha-grid" id="trilhaGrid"></div>
+      </section>
+
+      <!-- ===================== COMPLIANCE ===================== -->
+      <section class="view" id="view-compliance">
+        <div class="section-bar">Publicidade médica · o que protege o perfil</div>
+        <div class="callout">
+          <ul id="complianceList"></ul>
+        </div>
+
+        <div class="section-title"><h2>Checklist antes de publicar</h2><p>Passar por todos os itens antes de apertar publicar.</p></div>
+        <div class="card" style="padding:18px;">
+          <ul class="bullets" id="checklist"></ul>
+        </div>
+      </section>
+
+      <!-- ===================== GANCHOS ===================== -->
+      <section class="view" id="view-ganchos">
+        <div class="callout">
+          <h4>Quando usar</h4>
+          <p>Nove aberturas prontas para trocar o gancho de qualquer Reel sem mexer no roteiro falado. Use quando a retenção estiver abaixo da média, ou quando o tema voltar no mês seguinte.</p>
+        </div>
+        <div class="gancho-grid" id="ganchoGrid"></div>
+
+        <div class="section-title"><h2>Como a caixinha vira Reel</h2><p>O formato de maior retorno: pergunta real, resposta direta.</p></div>
+        <div class="steps-flow" id="caixinhaFlow"></div>
+        <div class="card" style="padding:18px;">
+          <span class="detail__label">Regras do quadro</span>
+          <ul class="bullets" id="regrasQuadro"></ul>
+        </div>
+
+        <div class="section-title"><h2>Repetir o mecanismo, não a frequência</h2><p>O alcance oscila de 600 a 3 mil visualizações — a saída não é publicar mais.</p></div>
+        <div class="card" style="padding:18px;">
+          <ul class="bullets" id="mecanismo"></ul>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===================== DATA ===================== */
+const SEMANAS = [
+  {n:1, titulo:"Posicionamento", objetivo:"O perfil passa a comunicar uma categoria clara. Em paralelo, revisar bio, foto e Destaques.", indicador:"Visitas ao perfil e cliques na bio — o indicador não é alcance, é reconhecimento."},
+  {n:2, titulo:"Identificação e autoridade", objetivo:"Aumentar o “ela está falando comigo”. Semana de maior potencial de alcance novo.", indicador:"Retenção e compartilhamento — os Reels de identificação são os que ela manda pra amiga."},
+  {n:3, titulo:"Diferenciação e desejo", objetivo:"Mostrar que a abordagem não se resume a prescrever hormônio. Entra a camada aspiracional.", indicador:"Salvamento e comentário mais longo — a camada aspiracional gera conversa, não só reação."},
+  {n:4, titulo:"Conversão", objetivo:"Transformar autoridade em demanda qualificada, sem venda agressiva. Semana da associação local.", indicador:"Contatos qualificados chegando pelo perfil — o número que importa vira agendamento."},
+];
+
+const DIAS = ["Segunda","Terça","Quarta","Quinta","Sexta"];
+
+const REELS = [
+{id:"01", titulo:"O erro pode não ser seu", tagLine:"Identificação, tira a culpa", pilar:"Identificação", quadro:"Ninguém te contou sobre os 40+", cenario:"Consultório, sentado à mesa, luz da janela", cenarioCat:"casa",
+ gancho:"Você virou a chave aos 40: cortou o pão, entrou na academia, passou a dormir cedo. E o corpo respondeu pior do que antes.",
+ roteiro:["Isso acontece com muita mulher, e quase sempre ela conclui que está fazendo errado.","Depois dos 40 o corpo muda a forma de responder ao mesmo estímulo que funcionava antes.","Hormônio, massa magra, sono e recuperação entram na conta de um jeito diferente.","Fazer mais do mesmo com mais esforço costuma ser exatamente o que trava o resultado."],
+ cta:"Salva se você já se culpou por isso.", trilha:"Identificação, piano leve.",
+ legenda:"Esforço no lugar errado cansa e não muda o resultado. Conteúdo educativo, cada caso precisa de avaliação individual.",
+ hashtags:["mulher40mais","saudedamulher","menopausa","recomposicaocorporal","metabolismo"]},
+{id:"02", titulo:"É hormônio ou é idade?", tagLine:"Quadro fixo, quebra de crença", pilar:"Quebra de crenças", quadro:"Isso é hormônio ou idade?", cenario:"Consultório, em pé ao lado da maca", cenarioCat:"consultorio",
+ gancho:"Isso é hormônio ou é só idade? A resposta muda tudo o que você vai fazer a seguir.",
+ roteiro:["Essa é a pergunta que eu mais escuto, e ela não é retórica: ela define a conduta.","Se for hormonal, existe uma investigação e uma abordagem específica para aquilo.","Se for estilo de vida, nenhuma reposição resolve, e insistir nela atrasa o resultado.","Na maioria das vezes é uma mistura das duas, e é aí que separar importa tanto."],
+ cta:"Comenta um sintoma e eu falo se costuma ser mais hormônio ou mais rotina.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Separar o que é hormonal do que é rotina é o primeiro passo de qualquer plano. Conteúdo educativo, não substitui consulta.",
+ hashtags:["mulher40mais","menopausa","saudehormonal","saudedamulher","qualidadedevida"]},
+{id:"03", titulo:"A pergunta errada da consulta", tagLine:"Posicionamento, opinião", pilar:"Posicionamento", quadro:"O que eu explicaria no consultório", cenario:"Academia, logo após o treino", cenarioCat:"academia",
+ gancho:"Se a única coisa que te perguntam numa consulta é quanto você quer emagrecer, você está na consulta errada.",
+ roteiro:["Peso é um dado, e sozinho ele não diz quase nada sobre a saúde de uma mulher 40+.","Eu quero saber como você dorme, como você recupera de um treino e como está a sua energia às três da tarde.","Quero saber a sua massa magra, a sua força e o que mudou no seu humor no último ano.","Emagrecer pode ser consequência disso tudo. Nunca deveria ser a pergunta de abertura."],
+ cta:"Comenta se você concorda. Quero saber o que você acha disso.", trilha:"Opinião, sem trilha, só a voz.",
+ legenda:"Uma opinião que eu defendo: a conversa sobre corpo depois dos 40 começa no lugar errado. Conteúdo educativo.",
+ hashtags:["mulher40mais","saudedamulher","recomposicaocorporal","performance","bemestar"]},
+{id:"04", titulo:"A pergunta que mais chega", tagLine:"Resposta de caixinha", pilar:"Autoridade", quadro:"Doutor, depois dos 40...", cenario:"Consultório, sentado na cadeira da paciente", cenarioCat:"consultorio",
+ gancho:"A pergunta que mais chega na minha caixinha de mulheres acima dos 40 é esta aqui.",
+ roteiro:["Elas perguntam se vão ter que tomar hormônio para o resto da vida.","A resposta honesta é que depende de por que a reposição foi indicada e de como o corpo responde.","Existe reavaliação periódica, existe ajuste, e existe também a possibilidade de suspensão.","O que não existe é decisão tomada uma vez e nunca mais revisada."],
+ cta:"Manda a sua pergunta na caixinha. Toda semana eu respondo uma aqui.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Resposta de caixinha da semana. Conteúdo educativo e geral, a conduta é sempre individual e definida em consulta.",
+ hashtags:["mulher40mais","menopausa","saudehormonal","saudedamulher","duvidas"]},
+{id:"05", titulo:"Mesmo manequim, corpo diferente", tagLine:"Quebra de crença, cena", pilar:"Quebra de crenças", quadro:"Corpo feminino 40+", cenario:"Academia, área de musculação", cenarioCat:"academia",
+ gancho:"Você entrou no mesmo manequim de dez anos atrás e mesmo assim se sente pior no espelho. Não é impressão sua.",
+ roteiro:["Dá para manter o mesmo número e ter um corpo completamente diferente por dentro.","Menos massa magra e mais gordura ocupam o mesmo tamanho de roupa e não entregam a mesma função.","Isso muda força, disposição, contorno e a forma como o corpo lida com energia.","Por isso eu olho composição corporal, não o número que a roupa ou a balança informam."],
+ cta:"Salva pra entender por que o espelho e a roupa nem sempre concordam.", trilha:"Identificação, piano leve.",
+ legenda:"Mesmo tamanho não significa mesmo corpo. Conteúdo educativo, procure avaliação individual.",
+ hashtags:["recomposicaocorporal","mulher40mais","massamagra","saudedamulher","composicaocorporal"]},
+{id:"06", titulo:"O que funcionava aos 38", tagLine:"Identificação forte", pilar:"Identificação", quadro:"Corpo feminino 40+", cenario:"Cozinha de casa, apoiado na bancada", cenarioCat:"casa",
+ gancho:"Aos 38 aquele corte na alimentação funcionava em duas semanas. Você repetiu exatamente o mesmo aos 46 e não aconteceu nada.",
+ roteiro:["Não é que o método piorou. É que o corpo que recebe o método é outro.","Massa magra, sensibilidade à insulina e resposta hormonal mudam ao longo da década.","O mesmo déficit que antes só tirava gordura, agora costuma tirar músculo junto.","Repetir a estratégia antiga é o erro mais comum, e o mais difícil de aceitar."],
+ cta:"Comenta a sua idade e o que parou de funcionar pra você.", trilha:"Identificação, piano leve.",
+ legenda:"O método não envelheceu. O corpo mudou, e ele pede outra estratégia. Conteúdo educativo, cada caso é individual.",
+ hashtags:["mulher40mais","metabolismo","recomposicaocorporal","saudedamulher","menopausa"]},
+{id:"07", titulo:"Nem toda queda é falta de hormônio", tagLine:"Quebra de crença", pilar:"Quebra de crenças", quadro:"Isso é hormônio ou idade?", cenario:"Consultório, mesa com exames abertos", cenarioCat:"consultorio",
+ gancho:"Nem toda queda de energia depois dos 40 é falta de hormônio. Às vezes é exatamente o contrário.",
+ roteiro:["Excesso de estímulo também derruba energia: treino demais, sono de menos, café o dia inteiro.","Reposição feita sem investigar isso pode mascarar o problema por alguns meses.","Depois a energia cai de novo e a conclusão errada é que a dose está baixa.","Investigar a causa antes de repor é o que evita esse ciclo."],
+ cta:"Salva. Esse é o tipo de coisa que quase ninguém explica.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Repor sem investigar pode esconder a causa. Conteúdo educativo, a conduta é sempre individual.",
+ hashtags:["saudehormonal","mulher40mais","menopausa","energia","saudedamulher"]},
+{id:"08", titulo:"O que ninguém explica direito", tagLine:"Descoberta, composição corporal", pilar:"Autoridade", quadro:"Ninguém te contou sobre os 40+", cenario:"Corredor da clínica, andando com a câmera na mão", cenarioCat:"externa",
+ gancho:"O que acontece com o corpo da mulher depois dos 40 que ninguém te explica direito.",
+ roteiro:["A perda de massa magra começa antes, mas é nessa década que ela fica visível.","A gordura muda de lugar e a barriga costuma ser o primeiro sinal, mesmo com peso estável.","O sono fica mais fragmentado, e isso sozinho já muda fome, humor e recuperação.","Nada disso é fracasso pessoal. É fisiologia, e fisiologia se acompanha."],
+ cta:"Manda pra uma amiga que está nessa fase e acha que é só com ela.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Entender o que muda tira o peso da culpa e mostra onde agir. Conteúdo educativo, não substitui avaliação.",
+ hashtags:["mulher40mais","menopausa","composicaocorporal","saudedamulher","longevidade"]},
+{id:"09", titulo:"Três vezes na mesma semana", tagLine:"Resposta de caixinha", pilar:"Autoridade", quadro:"Doutor, depois dos 40...", cenario:"Consultório, sentado na cadeira da paciente", cenarioCat:"consultorio",
+ gancho:"Recebi esta pergunta três vezes só essa semana. Se ela se repete tanto, precisa de resposta em vídeo.",
+ roteiro:["Perguntaram se treinar musculação atrapalha quem está fazendo reposição.","Não atrapalha. Na maior parte dos casos é justamente o que faz a diferença aparecer.","O estímulo de força é o que direciona o corpo a construir músculo em vez de só ganhar peso.","Sem esse estímulo, boa parte do potencial da abordagem se perde."],
+ cta:"Manda a sua pergunta na caixinha que na semana que vem eu respondo.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Resposta de caixinha da semana. Conteúdo educativo e geral, cada caso exige avaliação individual.",
+ hashtags:["mulher40mais","musculacao","saudehormonal","recomposicaocorporal","saudedamulher"]},
+{id:"10", titulo:"Só a balança atrasa resultado", tagLine:"Quebra de crença, autoridade", pilar:"Posicionamento", quadro:"O que eu explicaria no consultório", cenario:"Academia, ao lado do rack", cenarioCat:"academia",
+ gancho:"Tratar mulher 40+ olhando só pra balança é o erro que mais atrasa resultado.",
+ roteiro:["A balança soma tudo: músculo, gordura, água e o que você comeu ontem.","Quando o número é a única meta, a estratégia acaba sendo restringir cada vez mais.","Restrição agressiva nessa fase tira músculo, e músculo é o que sustenta o metabolismo.","O resultado é uma mulher mais leve, mais cansada e com mais chance de recuperar tudo."],
+ cta:"Comenta se você já passou por isso.", trilha:"Opinião, batida seca.",
+ legenda:"O número mais fácil de medir é o que menos informa. Conteúdo educativo, cada caso é individual.",
+ hashtags:["mulher40mais","recomposicaocorporal","massamagra","saudedamulher","metabolismo"]},
+{id:"11", titulo:"Reposição não conserta rotina", tagLine:"Diferenciação, responsabilidade", pilar:"Quebra de crenças", quadro:"Isso é hormônio ou idade?", cenario:"Consultório, sentado à mesa", cenarioCat:"consultorio",
+ gancho:"Reposição hormonal não conserta uma rotina que está destruindo a sua saúde. Eu explico.",
+ roteiro:["Quando indicada, ela é uma ferramenta boa, e eu uso. Mas ferramenta tem limite.","Ela não repõe sono, não constrói músculo e não organiza a sua alimentação.","Quem dorme cinco horas e não treina vai sentir uma melhora inicial e depois estacionar.","A reposição é uma parte da abordagem, nunca a abordagem inteira."],
+ cta:"Salva pra lembrar disso antes de esperar que um tratamento resolva tudo.", trilha:"Opinião, sem trilha.",
+ legenda:"Ferramenta boa, usada dentro de um conjunto. Não indico nem contraindico conduta por aqui, isso se decide em consulta.",
+ hashtags:["saudehormonal","mulher40mais","menopausa","habitos","saudedamulher"]},
+{id:"12", titulo:"Por que sua amiga sentiu e você não", tagLine:"Individualização", pilar:"Autoridade", quadro:"O que eu explicaria no consultório", cenario:"Consultório, em pé ao lado da maca", cenarioCat:"consultorio",
+ gancho:"A sua amiga fez reposição e diz que virou outra pessoa. Você fez e quase não sentiu nada. Isso tem explicação.",
+ roteiro:["Duas mulheres da mesma idade podem partir de pontos completamente diferentes.","Tempo de sintoma, massa magra, sono, estresse e o que mais está acontecendo no corpo mudam a resposta.","A mesma conduta em contextos diferentes produz resultados diferentes, e isso é esperado.","Por isso comparar o seu processo com o de outra pessoa costuma gerar frustração à toa."],
+ cta:"Comenta se você já se comparou com alguém e se sentiu pra trás.", trilha:"Identificação, piano leve.",
+ legenda:"Resposta diferente não significa que uma das duas está errada. Conteúdo educativo, avaliação sempre individual.",
+ hashtags:["saudehormonal","mulher40mais","menopausa","individualizacao","saudedamulher"]},
+{id:"13", titulo:"A década tem regras próprias", tagLine:"Aspiracional, visão", pilar:"Posicionamento", quadro:"Ninguém te contou sobre os 40+", cenario:"Bastidor, chegando na clínica de manhã", cenarioCat:"externa",
+ gancho:"Ninguém avisa a mulher de 35 que a década seguinte do corpo dela tem regras próprias. Eu vou avisar.",
+ roteiro:["Não é uma década pior. É uma década com outra lógica de funcionamento.","Força passa a ser prioridade, proteína passa a ser não negociável, sono deixa de ser detalhe.","Quem entende isso aos 40 chega aos 60 com uma vida bem diferente de quem só reage.","Não é sobre frear o tempo. É sobre jogar com as regras certas."],
+ cta:"Manda pra uma amiga que ainda vai entrar nessa fase.", trilha:"Aspiracional, trilha ascendente.",
+ legenda:"Uma fase nova pede um manual novo, e quase ninguém entrega esse manual. Conteúdo educativo.",
+ hashtags:["mulher40mais","longevidade","saudedamulher","performance","qualidadedevida"]},
+{id:"14", titulo:"Performance na menopausa", tagLine:"Resposta de caixinha", pilar:"Identificação", quadro:"Perguntas que tem vergonha de fazer", cenario:"Academia, entre séries", cenarioCat:"academia",
+ gancho:"Perguntaram na caixinha se dá pra ter performance na menopausa. Dá, e eu mostro por onde começa.",
+ roteiro:["Performance aqui não é competir, é conseguir fazer o que você quer sem o corpo travar.","Começa por força, porque é ela que devolve autonomia, postura e disposição.","Depois vem sono e proteína, que são o que permite o corpo se recuperar do estímulo.","Não existe idade em que treinar deixa de valer a pena. Existe treino errado pra fase."],
+ cta:"Manda a sua pergunta na caixinha, inclusive as que você tem vergonha de fazer.", trilha:"Aspiracional, trilha ascendente.",
+ legenda:"Resposta de caixinha da semana. Conteúdo educativo, o plano de treino e saúde é sempre individual.",
+ hashtags:["menopausa","mulher40mais","performance","musculacao","saudedamulher"]},
+{id:"15", titulo:"Não é ter 20 de novo", tagLine:"Aspiracional, desejo", pilar:"Posicionamento", quadro:"Corpo feminino 40+", cenario:"Externa, caminhando ao ar livre", cenarioCat:"externa",
+ gancho:"Envelhecer bem não é tentar ter 20 anos de novo. É algo bem melhor do que isso.",
+ roteiro:["Aos 20 você tinha um corpo que aguentava qualquer coisa e nenhum conhecimento sobre ele.","Aos 45 você tem experiência, critério e a chance de construir um corpo que você entende.","Força, disposição, sono bom e confiança são resultados melhores do que qualquer nostalgia.","O objetivo nunca foi voltar. É chegar na frente inteira."],
+ cta:"Manda pra uma amiga 40+ que precisa ouvir isso hoje.", trilha:"Aspiracional, trilha cinematográfica.",
+ legenda:"Não é sobre voltar no tempo, é sobre construir a próxima fase com critério. Conteúdo educativo.",
+ hashtags:["mulher40mais","longevidade","autoestima","saudedamulher","qualidadedevida"]},
+{id:"16", titulo:"Três coisas antes da receita", tagLine:"Mostra o método, conversão", pilar:"Conversão", quadro:"O que eu explicaria no consultório", cenario:"Consultório, sentado à mesa", cenarioCat:"consultorio",
+ gancho:"Antes de eu escrever qualquer receita para uma mulher 40+, tem três coisas que eu preciso saber. Nenhuma delas está no exame.",
+ roteiro:["A primeira é como está o seu sono, de verdade, não o que você gostaria que fosse.","A segunda é o que você já tentou antes e por que parou. Isso me diz mais que qualquer resultado.","A terceira é o que você quer conseguir fazer daqui a um ano, em coisas concretas do dia.","Exame entra depois, para confirmar ou descartar o que a conversa já apontou."],
+ cta:"Comenta qual dessas três você nunca foi perguntada.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Exame confirma, conversa direciona. Conteúdo educativo, a avaliação é sempre individual.",
+ hashtags:["mulher40mais","saudedamulher","menopausa","avaliacao","saudehormonal"]},
+{id:"17", titulo:"Não é mais um remédio", tagLine:"Diferenciação, convite", pilar:"Conversão", quadro:"O que eu explicaria no consultório", cenario:"Consultório, enquadramento mais fechado", cenarioCat:"consultorio",
+ gancho:"Você não precisa de mais um remédio. Precisa de alguém olhando o seu caso por inteiro.",
+ roteiro:["Muita mulher chega com uma sacola de prescrições feitas por profissionais diferentes.","Cada uma resolvia uma queixa isolada, e nenhuma olhou o conjunto.","Sono, hormônio, composição corporal e rotina conversam entre si o tempo todo.","Olhar o conjunto costuma simplificar o tratamento, não complicar."],
+ cta:"Salva e comenta se você já se sentiu tratada em pedaços.", trilha:"Identificação, piano leve.",
+ legenda:"Olhar o conjunto costuma reduzir o número de coisas necessárias. Conteúdo educativo, não substitui consulta.",
+ hashtags:["mulher40mais","saudedamulher","menopausa","saudehormonal","bemestar"]},
+{id:"18", titulo:"O que elas mais comentam", tagLine:"Prova, acolhimento", pilar:"Prova", quadro:"O que eu explicaria no consultório", cenario:"Recepção da clínica", cenarioCat:"casa",
+ gancho:"O que as minhas pacientes mais comentam não é sobre o resultado. É sobre como foram ouvidas.",
+ roteiro:["Muitas chegam dizendo que já foram tratadas como exagero ou como frescura.","A consulta começa por escutar a história inteira, sem pressa e sem interromper.","Isso não é gentileza, é método: metade do diagnóstico está no que a pessoa conta.","Quando a mulher se sente ouvida, ela também adere melhor ao que a gente combina."],
+ cta:"Comenta se você já se sentiu não levada a sério numa consulta.", trilha:"Identificação, piano emocional.",
+ legenda:"Escuta é parte do método, não um detalhe do atendimento. Conteúdo educativo.",
+ hashtags:["mulher40mais","saudedamulher","acolhimento","menopausa","cuidado"]},
+{id:"19", titulo:"Pra quem faz sentido avaliar", tagLine:"Resposta de caixinha, conversão", pilar:"Conversão", quadro:"Doutor, depois dos 40...", cenario:"Carro, mas com enquadramento e luz diferentes do habitual", cenarioCat:"carro",
+ gancho:"Perguntaram pra quem faz sentido marcar uma avaliação comigo. Vou responder sem enrolar.",
+ roteiro:["Faz sentido para quem está acima dos 40 e percebeu mudança de energia, sono, corpo ou humor.","Para quem já tentou resolver por partes e não sustentou o resultado.","E para quem quer entender o próprio corpo nesta fase, mesmo sem sintoma incomodando ainda.","Não faz sentido para quem procura resultado rápido sem mudar nada da rotina."],
+ cta:"Manda a sua pergunta na caixinha, e o contato do consultório está no perfil.", trilha:"Autoridade, ambient calmo.",
+ legenda:"Resposta de caixinha da semana. Conteúdo educativo, atendimento em Belo Horizonte, contato no perfil.",
+ hashtags:["mulher40mais","belohorizonte","saudedamulher","menopausa","saudehormonal"]},
+{id:"20", titulo:"Se você está em BH", tagLine:"Chamada local", pilar:"Conversão", quadro:"Corpo feminino 40+", cenario:"Externa, na frente da clínica", cenarioCat:"externa",
+ gancho:"Se você está em BH e sente que o seu corpo mudou depois dos 40, talvez seja hora de entender por quê.",
+ roteiro:["Mudança de corpo nessa fase tem explicação, e explicação se investiga.","A avaliação olha sono, rotina, composição corporal, exames e o que você já tentou.","A partir disso a gente monta um caminho que faça sentido para a sua vida, não para a média.","Atendo aqui em Belo Horizonte, e o contato está no perfil."],
+ cta:"Contato no perfil pra entender como funciona a avaliação.", trilha:"Aspiracional, trilha ascendente.",
+ legenda:"Atendimento em Belo Horizonte. Conteúdo educativo, a avaliação e a conduta são sempre individuais.",
+ hashtags:["belohorizonte","mulher40mais","saudedamulher","menopausa","recomposicaocorporal"]},
+];
+
+const PILARES = [
+  {nome:"Identificação", peso:25, funcao:"Fazer a mulher pensar que é exatamente isso que acontece com ela. Traz gente nova."},
+  {nome:"Autoridade", peso:20, funcao:"Explicar sem virar congresso médico. Gera confiança."},
+  {nome:"Quebra de crenças", peso:15, funcao:"Nem tudo depois dos 40 é culpa do hormônio. Diferencia."},
+  {nome:"Posicionamento", peso:15, funcao:"Opinião e ponto de vista. Cria marca e rompe a bolha."},
+  {nome:"Conexão e bastidores", peso:10, funcao:"Academia, rotina, consultório. Gera coerência."},
+  {nome:"Prova e experiência", peso:10, funcao:"Percepção das pacientes, sempre dentro da publicidade médica."},
+  {nome:"Conversão", peso:5, funcao:"Para quem é a consulta e como chegar. Sem venda agressiva."},
+];
+
+const TRILHAS = [
+  {n:1, nome:"Opinião", uso:"Reels de ponto de vista.", desc:"Sem trilha, só a voz, ou uma batida seca com corte no gancho. Silêncio dá peso à opinião.", h:[6,10,16,8,14]},
+  {n:2, nome:"Identificação", uso:"Quando a mulher precisa se reconhecer na cena antes de ouvir a explicação.", desc:"Piano leve.", h:[10,16,12,20,14]},
+  {n:3, nome:"Autoridade", uso:"Respostas de caixinha e explicações de fisiologia.", desc:"Ambient calmo.", h:[12,12,13,12,12]},
+  {n:4, nome:"Aspiracional", uso:"Reels da camada de desejo — o que diferencia este perfil.", desc:"Trilha ascendente ou cinematográfica.", h:[8,13,18,22,26]},
+];
+
+const CENARIOS = [
+  {nome:"Consultório, mesa e maca", reels:[2,4,7,9,11,12,16,17], porque:"É onde a autoridade mora. Varie a cadeira, o enquadramento e o lado da mesa.", cat:"consultorio"},
+  {nome:"Academia", reels:[3,5,10,14], porque:"Prova o interesse real por performance e conecta com o território ampliado.", cat:"academia"},
+  {nome:"Externa e bastidor", reels:[8,13,15,20], porque:"Rompe a estética de conteúdo médico e traz movimento ao feed.", cat:"externa"},
+  {nome:"Casa e recepção", reels:[1,6,18], porque:"Proximidade. É onde o tom de conversa fica mais natural.", cat:"casa"},
+  {nome:"Carro", reels:[19], porque:"Uma vez só, de propósito, e com luz e enquadramento diferentes.", cat:"carro"},
+];
+
+const QUADROS = [
+  {nome:"Doutor, depois dos 40...", oque:"As perguntas reais da caixinha. Um por semana, formato fixo.", reels:[4,9,19]},
+  {nome:"Isso é hormônio ou idade?", oque:"Separa o que é hormonal do que é estilo de vida.", reels:[2,7,11]},
+  {nome:"O que eu explicaria no consultório", oque:"Respostas no tom de quem conversa com a paciente.", reels:[3,10,12,16,17,18]},
+  {nome:"Ninguém te contou sobre os 40+", oque:"Conteúdo de descoberta, para quem nem sabe o que investigar.", reels:[1,8,13]},
+  {nome:"Corpo feminino 40+", oque:"Composição corporal, treino, hábitos e alimentação.", reels:[5,6,15,20]},
+  {nome:"Perguntas que tem vergonha de fazer", oque:"Libido, autoestima, o que ela não pergunta em voz alta.", reels:[14]},
+];
+
+const COMPLIANCE = [
+  "Nenhum conteúdo declara ou sugere especialidade que não esteja registrada. Formação e qualificação sempre descritas de forma exata.",
+  "A palavra “referência” é objetivo interno de percepção, não frase para bio ou legenda. Autodeclaração de superioridade não entra na comunicação.",
+  "Sem frase absoluta do tipo “isso não é normal”. Nenhum conteúdo promete resultado, cura ou prazo.",
+  "Sem antes e depois de paciente, sem imagem de exame com dado pessoal e sem caso identificável.",
+  "Prova social pela percepção do cuidado, nunca por resultado clínico, e sempre dentro do que a normativa vigente permite.",
+  "Reposição hormonal aparece como ferramenta que exige indicação e acompanhamento. Nunca dose, nunca nome comercial, nunca indicação pelo perfil.",
+  "Nenhum programa de recompensa por indicação. O caminho é experiência, acompanhamento e lembrança.",
+  "Comentário e direct fazem triagem administrativa e agendamento, nunca pré-diagnóstico.",
+];
+
+const CHECKLIST = [
+  "O Reel abre pela cena nos primeiros 2 segundos, sem apresentação?",
+  "O cenário é o que está no card, e é diferente do Reel anterior?",
+  "Você trocou de roupa em relação ao Reel gravado antes deste?",
+  "A legenda deixa claro que é conteúdo educativo e que a avaliação é individual?",
+  "Nenhuma frase promete resultado, prazo ou declara especialidade não registrada?",
+  "As hashtags são do nicho, sem acento e sem cê-cedilha, de 3 a 5 por publicação?",
+  "Se é Reel de caixinha, a pergunta apareceu na tela como veio da audiência?",
+];
+
+const GANCHOS_RESERVA = [
+  {titulo:"Identificação e cotidiano", itens:[
+    "Você guardou a roupa que mais gosta no fundo do armário e disse pra si mesma que era falta de tempo.",
+    "Você começou a evitar foto de corpo inteiro e não lembra desde quando isso virou automático.",
+    "Você faz musculação há oito meses, não faltou uma semana, e ainda não viu diferença no espelho.",
+  ]},
+  {titulo:"Perguntas que ela não faz em voz alta", itens:[
+    "A sua vontade sumiu e você concluiu, sozinha, que era só cansaço da rotina.",
+    "Você tem uma pergunta que nunca fez pro seu médico porque achou que era bobagem.",
+    "As suas amigas falam de menopausa em voz baixa, como se fosse alguma coisa pra esconder.",
+  ]},
+  {titulo:"Corpo e treino depois dos 40", itens:[
+    "Você levanta da cadeira e o joelho reclama. Você tem 46 anos, não 76.",
+    "Você virou uma pessoa de pavio curto e não reconhece essa mulher que se irrita com tudo.",
+    "Você carrega a compra do carro em duas viagens e há cinco anos fazia em uma.",
+  ]},
+];
+
+const CAIXINHA_STEPS = [
+  {n:"1", titulo:"Coletar", desc:"Abrir a caixinha nos Stories na quinta, sempre com a mesma frase de chamada. Repetir no fim do dia.", onde:"Stories · toda quinta"},
+  {n:"2", titulo:"Escolher", desc:"Pegar a pergunta que apareceu mais de uma vez, não a mais interessante. Repetição é sinal de demanda real.", onde:"Sexta · 30 min de análise"},
+  {n:"3", titulo:"Gravar", desc:"Print da pergunta na tela nos 2 primeiros segundos, depois o corte para você respondendo.", onde:"Terça · no lote"},
+  {n:"4", titulo:"Guardar", desc:"Toda pergunta não usada vai para uma lista — o banco de temas do mês seguinte.", onde:"Bloco de notas do celular"},
+];
+
+const REGRAS_QUADRO = [
+  "Sempre a mesma abertura, o mesmo enquadramento e a mesma vinheta de texto — quadro reconhecível faz a audiência esperar pela próxima edição.",
+  "A pergunta aparece na tela exatamente como chegou, com o nome coberto. Reescrever tira a naturalidade que faz o formato funcionar.",
+  "Responda uma pergunta por vídeo. Duas perguntas no mesmo Reel derrubam a retenção pela metade.",
+  "Pergunta sobre caso individual não vira Reel — vira o exemplo de por que aquilo precisa de avaliação.",
+  "Pergunta sobre dose, marca de medicação ou “o que devo tomar” nunca é respondida, nem em vídeo nem no direct.",
+  "Se a semana não trouxer pergunta boa, use uma pergunta guardada do banco. Nunca invente uma pergunta.",
+];
+
+const MECANISMO = [
+  "Na sexta, olhe os dois Reels de maior retenção da semana e anote apenas uma coisa: o que o gancho fez nos 2 primeiros segundos.",
+  "Repita esse mecanismo no mês seguinte com outro assunto — mecanismo é a estrutura do gancho, não o tema.",
+  "Um Reel que foi bem volta ao ar em 30 dias com outro gancho e o mesmo conteúdo. Isso não é repetir, é reaproveitar o que já provou funcionar.",
+  "Três conteúdos ruins seguidos não são motivo para trocar o posicionamento. São ruído normal de algoritmo.",
+];
+
+const PILAR_CLASS = {
+  "Identificação":"chip--identificacao", "Autoridade":"chip--autoridade", "Quebra de crenças":"chip--quebra",
+  "Posicionamento":"chip--posicionamento", "Conversão":"chip--conversao", "Prova":"chip--prova",
+};
+const CAT_LABEL = {consultorio:"Consultório", academia:"Academia", externa:"Externa/bastidor", casa:"Casa/recepção", carro:"Carro"};
+const CAT_VAR = {consultorio:"--cat-consultorio", academia:"--cat-academia", externa:"--cat-externa", casa:"--cat-casa", carro:"--cat-carro"};
+const STAGES = ["pendente","gravado","editado","publicado"];
+const STAGE_LABEL = {pendente:"Pendente", gravado:"Gravado", editado:"Editado", publicado:"Publicado"};
+
+/* ===================== STATE ===================== */
+const DEFAULT_STATE = () => ({status:"pendente", responsavel:"", notas:""});
+const state = {};
+REELS.forEach(r => state[r.id] = DEFAULT_STATE());
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+/* ===================== SYNC (Vercel serverless function + Redis) =====================
+   Shared state lives in /api/reels, backed by Redis (Vercel Storage).
+   Any account, on any device, hitting this URL sees the same data —
+   no Claude account, org, or share-link version pinning involved. */
+const API_URL = '/api/reels';
+const saveTimers = {};
+
+function setSyncStatus(ok, label){
+  const dot = document.querySelector('#syncBadge .sync__dot');
+  const el = document.getElementById('syncLabel');
+  if(!dot || !el) return;
+  dot.classList.toggle('off', !ok);
+  el.textContent = label;
+}
+
+/* Updates the parts of the DOM that are safe to touch on a background
+   poll without disturbing whatever the person is doing — never rebuilds
+   the reel list itself, so an open accordion or a field mid-edit is left
+   alone. Values already focused by this viewer are skipped so a
+   colleague's edit never overwrites what you're typing right now. */
+function refreshVisibleReelWidgets(){
+  REELS.forEach(r => {
+    renderStepper(r.id);
+    const row = document.querySelector(`.reel-row[data-id="${r.id}"]`);
+    if(!row) return;
+    const respEl = row.querySelector('input[data-field="responsavel"]');
+    if(respEl && document.activeElement !== respEl) respEl.value = state[r.id].responsavel;
+    const notasEl = row.querySelector('textarea[data-field="notas"]');
+    if(notasEl && document.activeElement !== notasEl) notasEl.value = state[r.id].notas;
+  });
+}
+
+async function loadState(full){
+  try{
+    const res = await fetch(API_URL, {cache:'no-store'});
+    if(!res.ok) throw new Error('http ' + res.status);
+    const data = await res.json();
+    Object.keys(data).forEach(id => { if(state[id]) state[id] = Object.assign(DEFAULT_STATE(), data[id]); });
+    setSyncStatus(true, 'Editável — sincronizado com todos');
+    renderKpis();
+    renderWeekCards();
+    if(full) renderReelList(); else refreshVisibleReelWidgets();
+    return true;
+  }catch(e){
+    console.warn('load failed', e);
+    setSyncStatus(false, 'Sem conexão com o servidor — tentando de novo…');
+    return false;
+  }
+}
+
+function saveReel(id, patch){
+  state[id] = Object.assign({}, state[id], patch);
+  if(saveTimers[id]) clearTimeout(saveTimers[id]);
+  saveTimers[id] = setTimeout(async () => {
+    try{
+      const res = await fetch(API_URL, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({id, patch: state[id]}),
+      });
+      if(!res.ok) throw new Error('http ' + res.status);
+      setSyncStatus(true, 'Editável — sincronizado com todos');
+    }catch(e){
+      console.warn('save failed', e);
+      setSyncStatus(false, 'Não foi possível salvar — verifique a conexão');
+    }
+  }, 250);
+}
+
+function setStatus(id, stage){
+  saveReel(id, {status: stage, updatedAt: new Date().toISOString()});
+  renderStepper(id);
+  renderKpis();
+  renderWeekCards();
+}
+
+function setField(id, field, value){
+  saveReel(id, {[field]: value});
+}
+
+/* ===================== NAV ===================== */
+document.getElementById('nav').addEventListener('click', e => {
+  const btn = e.target.closest('.nav__btn');
+  if(!btn) return;
+  showView(btn.dataset.view);
+});
+const VIEW_META = {
+  overview: {title:"Visão geral", desc:"4 semanas · 20 Reels prontos para gravar, sem decisão na hora da gravação."},
+  roteiros: {title:"Roteiros", desc:"Status de produção, responsáveis e roteiro completo de cada Reel."},
+  cenarios: {title:"Cenários & quadros", desc:"Onde gravar e qual quadro fixo usar em cada Reel."},
+  pilares: {title:"Pilares & trilhas", desc:"O peso estratégico de cada pilar e a trilha de cada camada."},
+  compliance: {title:"Publicidade médica", desc:"As regras que protegem o registro e o perfil."},
+  ganchos: {title:"Banco de ganchos", desc:"Aberturas reserva e o fluxo da caixinha para Reel."},
+};
+function showView(view){
+  document.querySelectorAll('.nav__btn').forEach(b => b.classList.toggle('active', b.dataset.view===view));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id==='view-'+view));
+  document.getElementById('pageTitle').textContent = VIEW_META[view].title;
+  document.getElementById('pageDesc').textContent = VIEW_META[view].desc;
+}
+
+/* ===================== RENDER: OVERVIEW ===================== */
+function renderKpis(){
+  const total = REELS.length;
+  const counts = {pendente:0, gravado:0, editado:0, publicado:0};
+  REELS.forEach(r => counts[state[r.id].status]++);
+  const atLeast = stage => REELS.filter(r => STAGES.indexOf(state[r.id].status) >= STAGES.indexOf(stage)).length;
+  const kpis = [
+    {label:"Total de roteiros", value: total, color:"var(--brand)", pct:100},
+    {label:"Gravados ou mais", value: atLeast("gravado"), color:"var(--stage-gravado)", pct: atLeast("gravado")/total*100},
+    {label:"Editados ou mais", value: atLeast("editado"), color:"var(--stage-editado)", pct: atLeast("editado")/total*100},
+    {label:"Publicados", value: counts.publicado, color:"var(--stage-publicado)", pct: counts.publicado/total*100},
+  ];
+  document.getElementById('kpiRow').innerHTML = kpis.map(k => `
+    <div class="card kpi">
+      <span class="kpi__label">${k.label}</span>
+      <span class="kpi__value tnum">${k.value}<span>/${total}</span></span>
+      <div class="kpi__bar"><i style="width:${k.pct}%; background:${k.color}"></i></div>
+    </div>
+  `).join('');
+}
+
+function renderWeekCards(){
+  document.getElementById('weekCards').innerHTML = SEMANAS.map(s => {
+    const reels = REELS.filter(r => Math.ceil(+r.id/5) === s.n);
+    const pub = reels.filter(r => state[r.id].status === 'publicado').length;
+    const pct = Math.round(pub/reels.length*100);
+    return `
+    <div class="card week-card">
+      <span class="week-card__num">S${s.n}</span>
+      <span class="week-card__title">${escapeHtml(s.titulo)}</span>
+      <p class="week-card__obj">${escapeHtml(s.objetivo)}</p>
+      <div class="week-card__progress">
+        <div class="week-card__bar"><i style="width:${pct}%"></i></div>
+        <span class="week-card__pct tnum">${pub}/${reels.length}</span>
+      </div>
+      <p class="week-card__indicador">${escapeHtml(s.indicador)}</p>
+    </div>`;
+  }).join('');
+}
+
+function renderPilarBars(){
+  const max = Math.max(...PILARES.map(p=>p.peso));
+  document.getElementById('pilarBars').innerHTML = PILARES.map((p,i) => {
+    const shade = 30 + Math.round((1 - p.peso/max) * 45);
+    return `
+    <div class="barlist__row">
+      <span class="barlist__label">${escapeHtml(p.nome)}</span>
+      <div class="barlist__track"><div class="barlist__fill" style="width:${p.peso/max*100}%; background:color-mix(in srgb, var(--brand) ${100-shade}%, var(--surface-2))"></div></div>
+      <span class="barlist__val tnum">${p.peso}%</span>
+    </div>`;
+  }).join('');
+}
+
+function renderCenarioBars(){
+  const max = Math.max(...CENARIOS.map(c=>c.reels.length));
+  document.getElementById('cenarioBars').innerHTML = CENARIOS.map(c => `
+    <div class="barlist__row">
+      <span class="barlist__label">${escapeHtml(c.nome)}</span>
+      <div class="barlist__track"><div class="barlist__fill" style="width:${c.reels.length/max*100}%; background:var(${CAT_VAR[c.cat]})"></div></div>
+      <span class="barlist__val tnum">${c.reels.length} reels</span>
+    </div>`).join('');
+}
+
+/* ===================== RENDER: ROTEIROS ===================== */
+function stepperHtml(id){
+  const cur = state[id].status;
+  const curIdx = STAGES.indexOf(cur);
+  const dots = STAGES.map((s,i) => {
+    const color = `var(--stage-${s})`;
+    const filled = i <= curIdx;
+    return `<button class="stepper__dot no-toggle" data-stage="${s}" data-id="${id}" title="${STAGE_LABEL[s]}" style="${filled ? `background:${color}; border-color:${color};` : ''}"></button>`;
+  }).join('');
+  return `<div class="stepper__track"><div class="stepper no-toggle">${dots}</div><span class="stepper__label" style="color:var(--stage-${cur})">${STAGE_LABEL[cur]}</span></div>`;
+}
+function renderStepper(id){
+  const el = document.querySelector(`.reel-row[data-id="${id}"] [data-status-slot]`);
+  if(el) el.innerHTML = stepperHtml(id);
+}
+
+function reelRowHtml(r){
+  const dayIdx = (+r.id - 1) % 5;
+  return `
+  <article class="reel-row" data-id="${r.id}">
+    <div class="reel-row__head" tabindex="0" role="button" aria-expanded="false">
+      <div class="reel-row__day">
+        <span class="reel-row__daylabel">${DIAS[dayIdx].slice(0,3)}</span>
+        <span class="reel-row__num mono">${r.id}</span>
+      </div>
+      <div class="reel-row__title">
+        <span class="reel-row__titletext">${escapeHtml(r.titulo)}</span>
+        <span class="reel-row__tags">${escapeHtml(r.tagLine)}</span>
+      </div>
+      <div class="reel-row__meta">
+        <span class="chip ${PILAR_CLASS[r.pilar]||''}" style="width:fit-content;">${escapeHtml(r.pilar)}</span>
+        <span class="reel-row__quadro">${escapeHtml(r.quadro)}</span>
+      </div>
+      <div class="reel-row__side">
+        <div data-status-slot>${stepperHtml(r.id)}</div>
+        <input class="input--sm no-toggle" type="text" placeholder="Responsável" data-field="responsavel" data-id="${r.id}" value="${escapeHtml(state[r.id].responsavel)}">
+      </div>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="reel-row__detail" hidden>
+      <div>
+        <span class="detail__label">Gancho (tela)</span>
+        <div class="detail__gancho">${escapeHtml(r.gancho)}</div>
+        <div class="detail__field">
+          <span class="detail__label">Roteiro falado</span>
+          <ol class="detail__steps">${r.roteiro.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ol>
+        </div>
+      </div>
+      <div>
+        <span class="detail__label">Cenário</span>
+        <p style="font-size:12.5px; margin-bottom:12px;">${escapeHtml(r.cenario)}</p>
+        <div class="detail__meta-row" style="margin-bottom:12px;">
+          <span class="tag">CTA · ${escapeHtml(r.cta)}</span>
+        </div>
+        <div class="detail__meta-row" style="margin-bottom:12px;">
+          <span class="tag">Trilha · ${escapeHtml(r.trilha)}</span>
+        </div>
+        <span class="detail__label">Legenda</span>
+        <p class="detail__legenda" style="margin-bottom:12px;">${escapeHtml(r.legenda)}</p>
+        <span class="detail__label">Hashtags</span>
+        <div class="hashtags" style="margin-bottom:14px;">${r.hashtags.map(h=>`<span class="hashtag">#${h}</span>`).join('')}</div>
+        <span class="detail__label">Notas da equipe</span>
+        <textarea class="textarea" data-field="notas" data-id="${r.id}" placeholder="Quem grava, ajustes, aprovação...">${escapeHtml(state[r.id].notas)}</textarea>
+      </div>
+    </div>
+  </article>`;
+}
+
+function passesFilters(r){
+  const q = document.getElementById('fSearch').value.trim().toLowerCase();
+  const semana = document.getElementById('fSemana').value;
+  const pilar = document.getElementById('fPilar').value;
+  const cenario = document.getElementById('fCenario').value;
+  const status = document.getElementById('fStatus').value;
+  if(semana && Math.ceil(+r.id/5) !== +semana) return false;
+  if(pilar && r.pilar !== pilar) return false;
+  if(cenario && r.cenarioCat !== cenario) return false;
+  if(status && state[r.id].status !== status) return false;
+  if(q){
+    const hay = (r.titulo+' '+r.quadro+' '+r.gancho+' '+r.hashtags.join(' ')).toLowerCase();
+    if(!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function renderReelList(){
+  const list = document.getElementById('reelList');
+  const groups = SEMANAS.map(s => {
+    const reels = REELS.filter(r => Math.ceil(+r.id/5) === s.n && passesFilters(r));
+    return {s, reels};
+  }).filter(g => g.reels.length);
+
+  if(!groups.length){
+    list.innerHTML = `<div class="card no-results">Nenhum Reel corresponde aos filtros aplicados.</div>`;
+    return;
+  }
+  list.innerHTML = groups.map(g => `
+    <div class="week-group">
+      <div class="week-group__head">
+        <h3>Semana ${g.s.n} · ${escapeHtml(g.s.titulo)}</h3>
+        <span class="tag">${g.reels.length} reel${g.reels.length>1?'s':''}</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        ${g.reels.map(reelRowHtml).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* filters + population */
+function populateFilterOptions(){
+  const pilarSel = document.getElementById('fPilar');
+  [...new Set(REELS.map(r=>r.pilar))].forEach(p => {
+    const o = document.createElement('option'); o.value=p; o.textContent=p; pilarSel.appendChild(o);
+  });
+  const cenSel = document.getElementById('fCenario');
+  Object.entries(CAT_LABEL).forEach(([k,v]) => {
+    const o = document.createElement('option'); o.value=k; o.textContent=v; cenSel.appendChild(o);
+  });
+}
+['fSearch','fSemana','fPilar','fCenario','fStatus'].forEach(id => {
+  document.getElementById(id).addEventListener('input', renderReelList);
+  document.getElementById(id).addEventListener('change', renderReelList);
+});
+document.getElementById('fReset').addEventListener('click', () => {
+  document.getElementById('fSearch').value='';
+  document.getElementById('fSemana').value='';
+  document.getElementById('fPilar').value='';
+  document.getElementById('fCenario').value='';
+  document.getElementById('fStatus').value='';
+  renderReelList();
+});
+
+/* delegated interactions on the reel list */
+document.getElementById('reelList').addEventListener('click', e => {
+  const dot = e.target.closest('.stepper__dot');
+  if(dot){ setStatus(dot.dataset.id, dot.dataset.stage); return; }
+  const head = e.target.closest('.reel-row__head');
+  if(head && !e.target.closest('.no-toggle')){
+    const row = head.closest('.reel-row');
+    const detail = row.querySelector('.reel-row__detail');
+    const isOpen = row.classList.toggle('open');
+    detail.hidden = !isOpen;
+    head.setAttribute('aria-expanded', String(isOpen));
+  }
+});
+document.getElementById('reelList').addEventListener('keydown', e => {
+  if((e.key==='Enter'||e.key===' ') && e.target.classList.contains('reel-row__head')){
+    e.preventDefault(); e.target.click();
+  }
+});
+document.getElementById('reelList').addEventListener('change', e => {
+  const field = e.target.dataset.field;
+  if(field) setField(e.target.dataset.id, field, e.target.value);
+});
+
+/* ===================== RENDER: CENARIOS / QUADROS ===================== */
+function renderCenariosTable(){
+  document.querySelector('#tblCenarios tbody').innerHTML = CENARIOS.map(c => `
+    <tr>
+      <td><strong>${escapeHtml(c.nome)}</strong></td>
+      <td><div class="reelchips">${c.reels.map(n=>`<span class="reelchip">${String(n).padStart(2,'0')}</span>`).join('')}</div></td>
+      <td>${escapeHtml(c.porque)}</td>
+    </tr>`).join('');
+}
+function renderQuadrosTable(){
+  document.querySelector('#tblQuadros tbody').innerHTML = QUADROS.map(q => `
+    <tr>
+      <td><strong>${escapeHtml(q.nome)}</strong></td>
+      <td>${escapeHtml(q.oque)}</td>
+      <td><div class="reelchips">${q.reels.map(n=>`<span class="reelchip">${String(n).padStart(2,'0')}</span>`).join('')}</div></td>
+    </tr>`).join('');
+}
+
+/* ===================== RENDER: PILARES / TRILHAS ===================== */
+function renderPilaresTable(){
+  document.querySelector('#tblPilares tbody').innerHTML = PILARES.map(p => `
+    <tr><td><strong>${escapeHtml(p.nome)}</strong></td><td class="tnum">${p.peso}%</td><td>${escapeHtml(p.funcao)}</td></tr>
+  `).join('');
+}
+function renderTrilhas(){
+  document.getElementById('trilhaGrid').innerHTML = TRILHAS.map(t => `
+    <div class="card trilha-card">
+      <div class="waveform">${t.h.map(h=>`<i style="height:${h}px"></i>`).join('')}</div>
+      <span class="trilha-card__title">${t.n} · ${escapeHtml(t.nome)}</span>
+      <p class="trilha-card__uso">${escapeHtml(t.uso)}</p>
+      <p class="trilha-card__desc">${escapeHtml(t.desc)}</p>
+    </div>`).join('');
+}
+
+/* ===================== RENDER: COMPLIANCE ===================== */
+function renderCompliance(){
+  document.getElementById('complianceList').innerHTML = COMPLIANCE.map(c => `<li>${escapeHtml(c)}</li>`).join('');
+  document.getElementById('checklist').innerHTML = CHECKLIST.map(c => `<li>${escapeHtml(c)}</li>`).join('');
+}
+
+/* ===================== RENDER: GANCHOS ===================== */
+function renderGanchos(){
+  document.getElementById('ganchoGrid').innerHTML = GANCHOS_RESERVA.map(g => `
+    <div class="card gancho-card">
+      <h4>${escapeHtml(g.titulo)}</h4>
+      <ul>${g.itens.map(i=>`<li>${escapeHtml(i)}</li>`).join('')}</ul>
+    </div>`).join('');
+  document.getElementById('caixinhaFlow').innerHTML = CAIXINHA_STEPS.map(s => `
+    <div class="card step-flow">
+      <span class="step-flow__n">${s.n}</span>
+      <div class="step-flow__title">${escapeHtml(s.titulo)}</div>
+      <p class="step-flow__desc">${escapeHtml(s.desc)}</p>
+      <div class="step-flow__where">${escapeHtml(s.onde)}</div>
+    </div>`).join('');
+  document.getElementById('regrasQuadro').innerHTML = REGRAS_QUADRO.map(r => `<li>${escapeHtml(r)}</li>`).join('');
+  document.getElementById('mecanismo').innerHTML = MECANISMO.map(r => `<li>${escapeHtml(r)}</li>`).join('');
+}
+
+/* ===================== BOOT ===================== */
+populateFilterOptions();
+renderKpis();
+renderWeekCards();
+renderPilarBars();
+renderCenarioBars();
+renderReelList();
+renderCenariosTable();
+renderQuadrosTable();
+renderPilaresTable();
+renderTrilhas();
+renderCompliance();
+renderGanchos();
+showView('overview');
+loadState(true);
+setInterval(() => loadState(false), 8000);
+document.addEventListener('visibilitychange', () => { if(!document.hidden) loadState(false); });
+</script>

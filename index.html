@@ -15,7 +15,7 @@
   --stage-pendente:#A6A18E; --stage-gravado:#2F6396; --stage-editado:#7C519F; --stage-publicado:#2C7F4F;
   --chip-identificacao:#A9583F; --chip-autoridade:#33628F; --chip-quebra:#7C519F;
   --chip-posicionamento:#9C7325; --chip-conversao:#1B5A43; --chip-prova:#296E68;
-  --cat-consultorio:#163B2E; --cat-academia:#AB6435; --cat-externa:#296E68; --cat-casa:#9C7325; --cat-carro:#7C519F;
+  --cat-consultorio:#163B2E; --cat-academia:#AB6435; --cat-externa:#296E68; --cat-casa:#9C7325; --cat-carro:#7C519F; --cat-bastidor:#56607A;
   --shadow: 0 1px 2px rgba(27,36,32,.07), 0 10px 28px -14px rgba(27,36,32,.24);
   --radius-s:6px; --radius-m:10px; --radius-l:16px;
 }
@@ -32,7 +32,7 @@
     --stage-pendente:#8A9186; --stage-gravado:#6FA3D6; --stage-editado:#B084D6; --stage-publicado:#49BD7A;
     --chip-identificacao:#D68764; --chip-autoridade:#6FA3D6; --chip-quebra:#B084D6;
     --chip-posicionamento:#D9AE55; --chip-conversao:#4AA07F; --chip-prova:#49B0A8;
-    --cat-consultorio:#4AA07F; --cat-academia:#D68764; --cat-externa:#49B0A8; --cat-casa:#D9AE55; --cat-carro:#B084D6;
+    --cat-consultorio:#4AA07F; --cat-academia:#D68764; --cat-externa:#49B0A8; --cat-casa:#D9AE55; --cat-carro:#B084D6; --cat-bastidor:#9AA6C4;
     --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
   }
 }
@@ -48,7 +48,7 @@
   --stage-pendente:#8A9186; --stage-gravado:#6FA3D6; --stage-editado:#B084D6; --stage-publicado:#49BD7A;
   --chip-identificacao:#D68764; --chip-autoridade:#6FA3D6; --chip-quebra:#B084D6;
   --chip-posicionamento:#D9AE55; --chip-conversao:#4AA07F; --chip-prova:#49B0A8;
-  --cat-consultorio:#4AA07F; --cat-academia:#D68764; --cat-externa:#49B0A8; --cat-casa:#D9AE55; --cat-carro:#B084D6;
+  --cat-consultorio:#4AA07F; --cat-academia:#D68764; --cat-externa:#49B0A8; --cat-casa:#D9AE55; --cat-carro:#B084D6; --cat-bastidor:#9AA6C4;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
 }
 
@@ -258,12 +258,51 @@ input,textarea,select{font:inherit; color:inherit;}
 
 .bullets{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:7px; font-size:12.5px; line-height:1.55; color:var(--text-muted);}
 
+/* ============ CICLOS ============ */
+body[data-cycle="1"] [data-cycle="2"], body[data-cycle="2"] [data-cycle="1"]{display:none !important;}
+.cycle{display:flex; flex-direction:column; gap:6px;}
+.cycle__label{font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:var(--sidebar-text-muted); padding:0 10px;}
+.cycle__seg{display:grid; grid-template-columns:1fr 1fr; gap:3px; background:rgba(0,0,0,.18); border:1px solid var(--sidebar-border); border-radius:var(--radius-s); padding:3px;}
+.cycle__btn{border:none; background:transparent; color:var(--sidebar-text-muted); font-size:12px; font-weight:600; padding:6px 4px; border-radius:4px; cursor:pointer; line-height:1.15;}
+.cycle__btn small{display:block; font-size:10px; font-weight:400; opacity:.8;}
+.cycle__btn:hover{color:var(--sidebar-text);}
+.cycle__btn.active{background:var(--sidebar-bg-active); color:var(--sidebar-text); box-shadow:inset 0 0 0 1px var(--sidebar-accent);}
+.contrast{display:grid; grid-template-columns:1fr 1.25fr;}
+.contrast__h{font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--text-faint); font-weight:600; padding:12px 18px 8px;}
+.contrast__busca, .contrast__vive{padding:10px 18px; border-top:1px solid var(--border); font-size:13px; line-height:1.45;}
+.contrast__busca{color:var(--text-muted); text-decoration:line-through; text-decoration-color:var(--border-strong);}
+.contrast__vive{font-family:"Fraunces",serif; font-weight:500; font-size:14px; border-left:1px solid var(--border);}
+.contrast__h + .contrast__h{border-left:1px solid var(--border);}
+@media (max-width:640px){ .contrast{grid-template-columns:1fr;} .contrast__h{display:none;} .contrast__vive{border-left:none; border-top:none; padding-top:2px; padding-bottom:12px;} .contrast__busca{padding-bottom:2px; font-size:12px;} }
+.ladder{display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+.ladder span{font-size:12px; font-weight:600; padding:6px 11px; border-radius:20px; background:var(--brand-tint); color:var(--brand);}
+.ladder i{font-style:normal; color:var(--text-faint); font-size:12px;}
+.cal{width:100%; border-collapse:separate; border-spacing:6px;}
+.cal th{font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); font-weight:600; text-align:center;}
+.cal th:first-child{text-align:left;}
+.cal td{background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-s); text-align:center; padding:8px 4px; font-family:"IBM Plex Mono",monospace; font-size:12px; vertical-align:middle;}
+.cal td.cal__week{background:none; border:none; text-align:left; font-family:"IBM Plex Sans"; font-weight:600; font-size:12px;}
+.cal td.cal__cx{background:var(--accent-tint); border-color:var(--accent); color:var(--accent-strong);}
+.cal td.cal__cv{background:var(--brand-tint); border-color:var(--brand); color:var(--brand);}
+.cal td small{display:block; font-family:"IBM Plex Sans"; font-size:9.5px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; margin-top:2px;}
+.detail__cuidado{font-size:12px; line-height:1.5; color:var(--callout-text); background:var(--callout-bg); border-left:3px solid var(--callout-border); padding:9px 12px; border-radius:0 var(--radius-s) var(--radius-s) 0; margin-bottom:12px;}
+.gancho-grid--2{grid-template-columns:repeat(2,1fr);}
+@media (max-width:920px){ .gancho-grid--2{grid-template-columns:1fr;} }
+.avoid-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+@media (max-width:800px){ .avoid-grid{grid-template-columns:1fr;} }
+.avoid-card{padding:14px 16px;}
+.avoid-card h4{font-size:12.5px; font-weight:700; margin-bottom:6px;}
+.avoid-card p{font-size:12px; color:var(--text-muted); line-height:1.5;}
+
 /* ============ RESPONSIVE SHELL ============ */
 @media (max-width:880px){
   #app{flex-direction:column;}
   .sidebar{width:100%; flex-direction:row; align-items:center; padding:10px 14px; overflow-x:auto; gap:14px;}
   .brand{border:none; padding:0; flex:none;}
   .brand__sub{display:none;}
+  .cycle__label{display:none;}
+  .cycle{flex:none;}
+  .cycle__btn small{display:none;}
   .nav{flex-direction:row; flex:none;}
   .nav__btn span.nav__count{display:none;}
   .sidebar__foot{display:none;}
@@ -278,6 +317,13 @@ input,textarea,select{font:inherit; color:inherit;}
       <span class="brand__eyebrow">Grupo GH</span>
       <span class="brand__name">Reels 40+</span>
       <span class="brand__sub">Dr. Vitor Sabioni · Guia de Roteiros</span>
+    </div>
+    <div class="cycle" id="cycleSwitch">
+      <span class="cycle__label">Cronograma</span>
+      <div class="cycle__seg" role="tablist" aria-label="Ciclo de roteiros">
+        <button class="cycle__btn" data-cycle-btn="1" role="tab">Ciclo 1<small>Guia 1</small></button>
+        <button class="cycle__btn" data-cycle-btn="2" role="tab">Ciclo 2<small>Novo</small></button>
+      </div>
     </div>
     <nav class="nav" id="nav">
       <button class="nav__btn" data-view="overview">
@@ -294,7 +340,7 @@ input,textarea,select{font:inherit; color:inherit;}
       </button>
       <button class="nav__btn" data-view="pilares">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V10M11 19V5M18 19v-7"/></svg>
-        Pilares &amp; trilhas
+        <span data-cycle="1">Pilares &amp; trilhas</span><span data-cycle="2">Trilhas &amp; métricas</span>
       </button>
       <button class="nav__btn" data-view="compliance">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
@@ -302,7 +348,7 @@ input,textarea,select{font:inherit; color:inherit;}
       </button>
       <button class="nav__btn" data-view="ganchos">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
-        Banco de ganchos
+        <span data-cycle="1">Banco de ganchos</span><span data-cycle="2">Fórmulas &amp; stories</span>
       </button>
     </nav>
     <div class="sidebar__foot">
@@ -325,9 +371,23 @@ input,textarea,select{font:inherit; color:inherit;}
       <section class="view active" id="view-overview">
         <div class="grid-4" id="kpiRow"></div>
 
-        <div class="callout">
+        <div class="callout" data-cycle="1">
           <h4>A regra dos 80%</h4>
           <p>Oitenta por cento pronto e publicado vence cem por cento perfeito e parado. Não regravar cinco vezes por causa de uma palavra, não trocar o posicionamento porque três conteúdos foram mal. Ciclos de teste, nunca ciclos de dúvida.</p>
+        </div>
+
+        <div class="callout" data-cycle="2">
+          <h4>A troca que organiza este cronograma</h4>
+          <p>Os conteúdos mais técnicos constroem autoridade com quem já procura reposição hormonal, mas não alcançam a mulher que ainda não sabe o que pesquisar. Ela não digita progesterona no Instagram: ela sente que engordou, que dorme mal e que não se reconhece. Por isso nenhum dos vinte ganchos abre por termo técnico. Todos abrem pelo sintoma do jeito que ela conta em casa.</p>
+        </div>
+
+        <div class="card" data-cycle="2" style="overflow:hidden;">
+          <div class="contrast" id="contrastRow"></div>
+        </div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>A escada de todo vídeo</h2><p>Os vinte seguem essa ordem dentro do próprio vídeo.</p></div>
+          <div class="ladder" style="margin-top:8px;"><span>Sintoma do dia a dia</span><i>→</i><span>Identificação</span><i>→</i><span>Quebra de crença</span><i>→</i><span>Explicação médica</span><i>→</i><span>Caminho</span></div>
         </div>
 
         <div>
@@ -337,7 +397,7 @@ input,textarea,select{font:inherit; color:inherit;}
 
         <div class="grid-2">
           <div class="card" style="padding:18px;">
-            <div class="section-title"><h2 style="font-size:15px;">Peso dos 7 pilares</h2></div>
+            <div class="section-title"><h2 style="font-size:15px;"><span data-cycle="1">Peso dos 7 pilares</span><span data-cycle="2">Reels por camada de trilha</span></h2></div>
             <div class="barlist" id="pilarBars" style="margin-top:12px;"></div>
           </div>
           <div class="card" style="padding:18px;">
@@ -345,11 +405,16 @@ input,textarea,select{font:inherit; color:inherit;}
             <div class="barlist" id="cenarioBars" style="margin-top:12px;"></div>
           </div>
         </div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>O calendário da semana</h2><p>A quinta é sempre caixinha. A sexta da semana 4 é o único convite direto do mês.</p></div>
+          <div class="card table-wrap" style="padding:8px;"><table class="cal" id="calTable"></table></div>
+        </div>
       </section>
 
       <!-- ===================== ROTEIROS ===================== -->
       <section class="view" id="view-roteiros">
-        <div class="callout">
+        <div class="callout" data-cycle="1">
           <h4>Rotina da terça</h4>
           <ul>
             <li>Grave os 5 Reels da semana em lote, 60–90 min. A ordem do guia é a ordem de gravação.</li>
@@ -359,10 +424,23 @@ input,textarea,select{font:inherit; color:inherit;}
           </ul>
         </div>
 
+        <div class="callout" data-cycle="2">
+          <h4>Como gravar</h4>
+          <ul>
+            <li>Grave os cinco da semana em lote na terça. A ordem do cronograma já é a ordem de gravação.</li>
+            <li>Antes de começar, separe as roupas e os lugares da semana. Trocar de camisa entre os vídeos evita que os cinco pareçam o mesmo.</li>
+            <li>Leia o gancho em voz alta uma vez. Se sair travado, fale com as suas palavras mantendo a ideia — o roteiro é direção, não texto para decorar.</li>
+            <li>Nenhum dos vinte abre com apresentação. Nada de "oi, eu sou o Dr. Vitor". Isso é proposital.</li>
+            <li>Fale para a câmera como falaria para uma paciente sentada na sua frente. Se soar como aula, refaça uma vez só e siga.</li>
+            <li>Um convite direto por mês, no vídeo 20. Nos outros dezenove, peça para salvar, comentar ou marcar alguém.</li>
+            <li>A quarta continua sendo plantão. Publicação é agendada, então publicar na quarta não cria obrigação nenhuma naquele dia.</li>
+          </ul>
+        </div>
+
         <div class="filters">
           <input type="search" id="fSearch" placeholder="Buscar por título, quadro ou hashtag…">
           <select id="fSemana"><option value="">Todas as semanas</option><option value="1">Semana 1</option><option value="2">Semana 2</option><option value="3">Semana 3</option><option value="4">Semana 4</option></select>
-          <select id="fPilar"><option value="">Todos os pilares</option></select>
+          <select id="fPilar"><option value="" id="fPilarAll">Todos os pilares</option></select>
           <select id="fCenario"><option value="">Todos os cenários</option></select>
           <select id="fStatus"><option value="">Todos os status</option><option value="pendente">Pendente</option><option value="gravado">Gravado</option><option value="editado">Editado</option><option value="publicado">Publicado</option></select>
           <button class="filters__reset" id="fReset">Limpar filtros</button>
@@ -380,7 +458,11 @@ input,textarea,select{font:inherit; color:inherit;}
 
       <!-- ===================== CENARIOS ===================== -->
       <section class="view" id="view-cenarios">
-        <div class="callout">
+        <div class="callout" data-cycle="2">
+          <h4>O gargalo visual, resolvido no cronograma</h4>
+          <p>A maior parte dos vídeos tinha a mesma composição: você no carro com a caixinha em cima. A espontaneidade funciona, a repetição é que cansa o feed. Por isso cada card já traz o lugar de gravação definido, e o carro aparece uma vez só no mês inteiro.</p>
+        </div>
+        <div class="callout" data-cycle="1">
           <h4>O mapa de cenários</h4>
           <p>O gargalo era visual: quase todo vídeo no carro, sempre no mesmo enquadramento. Por isso cada Reel já vem com o cenário definido — dos 20, apenas um é no carro, e mesmo assim com enquadramento diferente do habitual.</p>
         </div>
@@ -402,7 +484,7 @@ input,textarea,select{font:inherit; color:inherit;}
 
       <!-- ===================== PILARES / TRILHAS ===================== -->
       <section class="view" id="view-pilares">
-        <div class="card table-wrap">
+        <div class="card table-wrap" data-cycle="1">
           <table class="table" id="tblPilares">
             <thead><tr><th>Pilar</th><th>Peso</th><th>Função</th></tr></thead>
             <tbody></tbody>
@@ -411,6 +493,16 @@ input,textarea,select{font:inherit; color:inherit;}
 
         <div class="section-title"><h2>Guia de trilhas</h2><p>Cada camada de conteúdo tem sua própria trilha sonora.</p></div>
         <div class="trilha-grid" id="trilhaGrid"></div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>O que olhar no fim do mês</h2><p>A conta do mês não é alcance.</p></div>
+          <div class="card table-wrap">
+            <table class="table" id="tblMetricas">
+              <thead><tr><th>O quê</th><th>Por quê</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
       <!-- ===================== COMPLIANCE ===================== -->
@@ -424,25 +516,68 @@ input,textarea,select{font:inherit; color:inherit;}
         <div class="card" style="padding:18px;">
           <ul class="bullets" id="checklist"></ul>
         </div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>As fórmulas que não servem para você</h2><p>Na boca de médico elas soam como relato de caso ou promessa de resultado — é compliance, não estilo.</p></div>
+          <div class="avoid-grid" id="avoidGrid"></div>
+        </div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>Cuidado de cada Reel</h2><p>O ponto de atenção de publicidade médica de cada roteiro.</p></div>
+          <div class="card table-wrap">
+            <table class="table" id="tblCuidados">
+              <thead><tr><th>Reel</th><th>Cuidado</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
       <!-- ===================== GANCHOS ===================== -->
       <section class="view" id="view-ganchos">
-        <div class="callout">
+        <div class="callout" data-cycle="2">
+          <h4>As fórmulas que geraram estes ganchos</h4>
+          <p>Cada card traz a linha "Fórmula do gancho": o molde usado para escrever aquela abertura. O molde é o que faz a pessoa parar de rolar, e ele se repete trocando só o assunto. Um bom gancho não salva um conteúdo ruim — ele faz a pessoa parar. Depois disso, é o conteúdo que precisa fazer valer a atenção.</p>
+        </div>
+        <div data-cycle="2" class="section-title"><h2>Banco de fórmulas prontas</h2><p>Troque o gancho de qualquer vídeo sem mexer no roteiro. Nenhuma abre por termo técnico.</p></div>
+        <div class="gancho-grid gancho-grid--2" id="formulaGrid" data-cycle="2"></div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>Como escrever um gancho novo em dois minutos</h2><p>Quatro passos, nenhum exige criatividade.</p></div>
+          <div class="steps-flow" id="ganchoSteps"></div>
+          <p style="font-size:12.5px; color:var(--text-muted); margin-top:10px;">O teste final: leia o gancho em voz alta para alguém que não é da área e pergunte se ela quer saber o resto. Se a resposta for morna, o problema é o gancho e não o assunto.</p>
+        </div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>O mapa de stories</h2><p>Story não é cobertura da rotina, é construção diária. Com estrutura fixa, deixa de depender de ideia.</p></div>
+          <div class="card table-wrap">
+            <table class="table" id="tblStories">
+              <thead><tr><th>Bloco</th><th>O que entra</th><th>Quanto</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div data-cycle="2">
+          <div class="section-title"><h2>A caixinha que alimenta o mês seguinte</h2><p>Quadro fixo toda quinta, nos vídeos 04, 09, 14 e 19.</p></div>
+          <div class="card" style="padding:18px;"><ul class="bullets" id="caixinha2"></ul></div>
+        </div>
+
+        <div class="callout" data-cycle="1">
           <h4>Quando usar</h4>
           <p>Nove aberturas prontas para trocar o gancho de qualquer Reel sem mexer no roteiro falado. Use quando a retenção estiver abaixo da média, ou quando o tema voltar no mês seguinte.</p>
         </div>
-        <div class="gancho-grid" id="ganchoGrid"></div>
+        <div class="gancho-grid" id="ganchoGrid" data-cycle="1"></div>
 
-        <div class="section-title"><h2>Como a caixinha vira Reel</h2><p>O formato de maior retorno: pergunta real, resposta direta.</p></div>
-        <div class="steps-flow" id="caixinhaFlow"></div>
-        <div class="card" style="padding:18px;">
+        <div class="section-title" data-cycle="1"><h2>Como a caixinha vira Reel</h2><p>O formato de maior retorno: pergunta real, resposta direta.</p></div>
+        <div class="steps-flow" id="caixinhaFlow" data-cycle="1"></div>
+        <div class="card" style="padding:18px;" data-cycle="1">
           <span class="detail__label">Regras do quadro</span>
           <ul class="bullets" id="regrasQuadro"></ul>
         </div>
 
-        <div class="section-title"><h2>Repetir o mecanismo, não a frequência</h2><p>O alcance oscila de 600 a 3 mil visualizações — a saída não é publicar mais.</p></div>
-        <div class="card" style="padding:18px;">
+        <div class="section-title" data-cycle="1"><h2>Repetir o mecanismo, não a frequência</h2><p>O alcance oscila de 600 a 3 mil visualizações — a saída não é publicar mais.</p></div>
+        <div class="card" style="padding:18px;" data-cycle="1">
           <ul class="bullets" id="mecanismo"></ul>
         </div>
       </section>
@@ -453,7 +588,7 @@ input,textarea,select{font:inherit; color:inherit;}
 
 <script>
 /* ===================== DATA ===================== */
-const SEMANAS = [
+const SEMANAS_C1 = [
   {n:1, titulo:"Posicionamento", objetivo:"O perfil passa a comunicar uma categoria clara. Em paralelo, revisar bio, foto e Destaques.", indicador:"Visitas ao perfil e cliques na bio — o indicador não é alcance, é reconhecimento."},
   {n:2, titulo:"Identificação e autoridade", objetivo:"Aumentar o “ela está falando comigo”. Semana de maior potencial de alcance novo.", indicador:"Retenção e compartilhamento — os Reels de identificação são os que ela manda pra amiga."},
   {n:3, titulo:"Diferenciação e desejo", objetivo:"Mostrar que a abordagem não se resume a prescrever hormônio. Entra a camada aspiracional.", indicador:"Salvamento e comentário mais longo — a camada aspiracional gera conversa, não só reação."},
@@ -462,7 +597,7 @@ const SEMANAS = [
 
 const DIAS = ["Segunda","Terça","Quarta","Quinta","Sexta"];
 
-const REELS = [
+const REELS_C1 = [
 {id:"01", titulo:"O erro pode não ser seu", tagLine:"Identificação, tira a culpa", pilar:"Identificação", quadro:"Ninguém te contou sobre os 40+", cenario:"Consultório, sentado à mesa, luz da janela", cenarioCat:"casa",
  gancho:"Você virou a chave aos 40: cortou o pão, entrou na academia, passou a dormir cedo. E o corpo respondeu pior do que antes.",
  roteiro:["Isso acontece com muita mulher, e quase sempre ela conclui que está fazendo errado.","Depois dos 40 o corpo muda a forma de responder ao mesmo estímulo que funcionava antes.","Hormônio, massa magra, sono e recuperação entram na conta de um jeito diferente.","Fazer mais do mesmo com mais esforço costuma ser exatamente o que trava o resultado."],
@@ -585,7 +720,7 @@ const REELS = [
  hashtags:["belohorizonte","mulher40mais","saudedamulher","menopausa","recomposicaocorporal"]},
 ];
 
-const PILARES = [
+const PILARES_C1 = [
   {nome:"Identificação", peso:25, funcao:"Fazer a mulher pensar que é exatamente isso que acontece com ela. Traz gente nova."},
   {nome:"Autoridade", peso:20, funcao:"Explicar sem virar congresso médico. Gera confiança."},
   {nome:"Quebra de crenças", peso:15, funcao:"Nem tudo depois dos 40 é culpa do hormônio. Diferencia."},
@@ -595,14 +730,14 @@ const PILARES = [
   {nome:"Conversão", peso:5, funcao:"Para quem é a consulta e como chegar. Sem venda agressiva."},
 ];
 
-const TRILHAS = [
+const TRILHAS_C1 = [
   {n:1, nome:"Opinião", uso:"Reels de ponto de vista.", desc:"Sem trilha, só a voz, ou uma batida seca com corte no gancho. Silêncio dá peso à opinião.", h:[6,10,16,8,14]},
   {n:2, nome:"Identificação", uso:"Quando a mulher precisa se reconhecer na cena antes de ouvir a explicação.", desc:"Piano leve.", h:[10,16,12,20,14]},
   {n:3, nome:"Autoridade", uso:"Respostas de caixinha e explicações de fisiologia.", desc:"Ambient calmo.", h:[12,12,13,12,12]},
   {n:4, nome:"Aspiracional", uso:"Reels da camada de desejo — o que diferencia este perfil.", desc:"Trilha ascendente ou cinematográfica.", h:[8,13,18,22,26]},
 ];
 
-const CENARIOS = [
+const CENARIOS_C1 = [
   {nome:"Consultório, mesa e maca", reels:[2,4,7,9,11,12,16,17], porque:"É onde a autoridade mora. Varie a cadeira, o enquadramento e o lado da mesa.", cat:"consultorio"},
   {nome:"Academia", reels:[3,5,10,14], porque:"Prova o interesse real por performance e conecta com o território ampliado.", cat:"academia"},
   {nome:"Externa e bastidor", reels:[8,13,15,20], porque:"Rompe a estética de conteúdo médico e traz movimento ao feed.", cat:"externa"},
@@ -610,7 +745,7 @@ const CENARIOS = [
   {nome:"Carro", reels:[19], porque:"Uma vez só, de propósito, e com luz e enquadramento diferentes.", cat:"carro"},
 ];
 
-const QUADROS = [
+const QUADROS_C1 = [
   {nome:"Doutor, depois dos 40...", oque:"As perguntas reais da caixinha. Um por semana, formato fixo.", reels:[4,9,19]},
   {nome:"Isso é hormônio ou idade?", oque:"Separa o que é hormonal do que é estilo de vida.", reels:[2,7,11]},
   {nome:"O que eu explicaria no consultório", oque:"Respostas no tom de quem conversa com a paciente.", reels:[3,10,12,16,17,18]},
@@ -630,7 +765,7 @@ const COMPLIANCE = [
   "Comentário e direct fazem triagem administrativa e agendamento, nunca pré-diagnóstico.",
 ];
 
-const CHECKLIST = [
+const CHECKLIST_C1 = [
   "O Reel abre pela cena nos primeiros 2 segundos, sem apresentação?",
   "O cenário é o que está no card, e é diferente do Reel anterior?",
   "Você trocou de roupa em relação ao Reel gravado antes deste?",
@@ -684,16 +819,173 @@ const MECANISMO = [
 const PILAR_CLASS = {
   "Identificação":"chip--identificacao", "Autoridade":"chip--autoridade", "Quebra de crenças":"chip--quebra",
   "Posicionamento":"chip--posicionamento", "Conversão":"chip--conversao", "Prova":"chip--prova",
+  "Conexão":"chip--prova", "Opinião":"chip--posicionamento", "Aspiracional":"chip--conversao",
 };
-const CAT_LABEL = {consultorio:"Consultório", academia:"Academia", externa:"Externa/bastidor", casa:"Casa/recepção", carro:"Carro"};
-const CAT_VAR = {consultorio:"--cat-consultorio", academia:"--cat-academia", externa:"--cat-externa", casa:"--cat-casa", carro:"--cat-carro"};
+const CAT_LABEL_C1 = {consultorio:"Consultório", academia:"Academia", externa:"Externa/bastidor", casa:"Casa/recepção", carro:"Carro"};
+const CAT_VAR = {consultorio:"--cat-consultorio", academia:"--cat-academia", externa:"--cat-externa", casa:"--cat-casa", carro:"--cat-carro", bastidor:"--cat-bastidor"};
+const REELS_C2 = [
+{"id": "21", "num": "01", "titulo": "Chorar com propaganda", "tagLine": "Fórmula 52 · Isso acontece com você?", "pilar": "Conexão", "quadro": "Ninguém te contou sobre os 40+", "cenario": "Consultório, sentado à mesa, luz da janela", "cenarioCat": "consultorio", "gancho": "Chorar com propaganda e perder a paciência com todo mundo. Isso acontece com você?", "roteiro": ["Isso aparece muito no consultório, e quase sempre vem com a mesma frase: eu não me reconheço mais.", "Oscilação de humor, pavio curto e vontade de chorar sem motivo entram na lista de coisas que mudam nessa fase.", "Não é fraqueza e não é drama. É química do corpo mudando, e isso tem explicação.", "O problema é que ninguém conecta o choro na propaganda com o que está acontecendo por dentro."], "cta": "Comenta aqui se você já passou por isso e achou que era só você.", "trilha": "Conexão, piano leve.", "legenda": "Mudança de humor nessa fase tem explicação e não é frescura. Conteúdo educativo, cada caso precisa de avaliação individual.", "hashtags": ["mulher40mais", "saudedamulher", "humor", "perimenopausa", "belohorizonte"], "formula": "52 · Isso acontece com você?", "cuidado": "Acolher sem diagnosticar. Nunca afirmar que o sintoma é hormonal no caso dela, só dizer que entra na lista do que se investiga."},
+{"id": "22", "num": "02", "titulo": "Esquece nome no meio da frase", "tagLine": "Fórmula 60 · Tem uma coisa sobre isso que quase ninguém explica", "pilar": "Conexão", "quadro": "Ninguém te contou sobre os 40+", "cenario": "Cozinha de casa, apoiado na bancada", "cenarioCat": "casa", "gancho": "Você esquece nome e perde a palavra no meio da frase. Tem uma explicação que quase ninguém dá.", "roteiro": ["Essa é uma das queixas que mais chegam aqui, e é também a que mais assusta.", "Falha de memória, dificuldade de concentração e aquela sensação de cabeça embaçada aparecem muito nessa fase da vida.", "A maior parte das mulheres acha que está ficando doente. E não conta para ninguém.", "Isso merece ser investigado, e merece ser investigado por alguém que não vai dizer que é da idade."], "cta": "Salva aqui e manda para a amiga que anda esquecendo tudo.", "trilha": "Conexão, piano leve.", "legenda": "Cabeça embaçada tem nome e tem investigação. Conteúdo educativo, procure avaliação individual.", "hashtags": ["mulher40mais", "memoria", "saudedamulher", "perimenopausa", "bemestar"], "formula": "60 · Tem uma coisa sobre isso que quase ninguém explica", "cuidado": "Nunca tranquilizar nem alarmar. Esquecimento também tem outras causas, e o conteúdo precisa encaminhar para avaliação, não descartar nada."},
+{"id": "23", "num": "03", "titulo": "Quando a ansiedade não melhora", "tagLine": "Fórmula 16 · É por isso que o seu ___ pode não estar funcionando", "pilar": "Opinião", "quadro": "O que eu explicaria no consultório", "cenario": "Consultório, em pé ao lado da maca", "cenarioCat": "consultorio", "gancho": "É por isso que o seu tratamento para ansiedade pode não estar funcionando.", "roteiro": ["Eu escuto isso quase toda semana, e é o que mais me incomoda na história das minhas pacientes.", "Muita mulher passa anos tratando ansiedade, insônia ou depressão sem que ninguém investigue essa parte.", "Não é que o tratamento esteja errado. É que faltou olhar o conjunto antes de escolher o caminho.", "E o recado que ela recebe é o pior de todos: que é coisa da cabeça dela."], "cta": "Comenta aqui se isso já aconteceu com você.", "trilha": "Opinião, sem trilha, só a voz.", "legenda": "Tratar o sintoma sem olhar o conjunto atrasa anos de cuidado. Conteúdo educativo, cada caso é individual e não substitui o seu acompanhamento.", "hashtags": ["mulher40mais", "saudedamulher", "perimenopausa", "ansiedade", "saudehormonal"], "formula": "16 · É por isso que o seu ___ pode não estar funcionando", "cuidado": "O mais delicado da semana. Nunca sugerir que outro profissional errou, nem que a paciente deva parar tratamento nenhum. O alvo é a falta de investigação, nunca a conduta de alguém."},
+{"id": "24", "num": "04", "titulo": "Isso é da idade ou não é", "tagLine": "Fórmula 47 · Vamos esclarecer isso de uma vez", "pilar": "Autoridade", "quadro": "Doutor, depois dos 40...", "cenario": "Consultório, sentado na cadeira da paciente", "cenarioCat": "consultorio", "gancho": "Isso é da idade ou não é? Vamos esclarecer isso de uma vez.", "roteiro": ["Perguntaram se tudo isso que elas sentem é mesmo da idade, ou se tem alguma coisa a fazer.", "Idade explica quando as coisas começam. Ela não explica o que está acontecendo nem o quanto dá para melhorar.", "Duas mulheres de 46 anos chegam aqui com queixas parecidas e com situações completamente diferentes por dentro.", "Por isso a resposta nunca é sim ou não. A resposta é investigar o seu caso."], "cta": "Manda a sua pergunta na caixinha. Toda semana eu respondo uma aqui.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Resposta de caixinha da semana. Conteúdo educativo e geral, a avaliação é sempre individual.", "hashtags": ["mulher40mais", "saudedamulher", "duvidas", "perimenopausa", "belohorizonte"], "formula": "47 · Vamos esclarecer isso de uma vez", "cuidado": "Manter o quadro fixo toda semana. Pergunta sobre caso individual nunca vira resposta, vira o exemplo de por que precisa de consulta."},
+{"id": "25", "num": "05", "titulo": "Acordar às três da manhã", "tagLine": "Fórmula 10 · Se você ___, preste atenção nisso", "pilar": "Conexão", "quadro": "Corpo feminino 40+", "cenario": "Externa, caminhando ao ar livre no fim da tarde", "cenarioCat": "externa", "gancho": "Se você acorda às três da manhã todo dia, presta atenção nisso.", "roteiro": ["Essa é a insônia que mais aparece nessa fase, e ela é diferente de não conseguir pegar no sono.", "Você dorme, acorda no meio da madrugada e fica ali, de olho aberto, pensando em tudo.", "Muita gente trata isso só com remédio para dormir, e nunca pergunta por que começou.", "Sono ruim por meses mexe com humor, com fome, com energia e com o corpo inteiro."], "cta": "Comenta que horas você costuma acordar. Eu aposto que é parecido.", "trilha": "Conexão, piano leve.", "legenda": "Acordar sempre no mesmo horário da madrugada é queixa comum nessa fase e merece investigação. Conteúdo educativo, procure avaliação individual.", "hashtags": ["mulher40mais", "sono", "insonia", "saudedamulher", "perimenopausa"], "formula": "10 · Se você ___, preste atenção nisso", "cuidado": "Sem indicar nem desindicar medicação para dormir. O conteúdo aponta a pergunta, não a conduta."},
+{"id": "26", "num": "06", "titulo": "Barriga não é falta de esforço", "tagLine": "Fórmula 15 · Existe um erro nessa ideia sobre ___", "pilar": "Identificação", "quadro": "Corpo feminino 40+", "cenario": "Academia, área de musculação", "cenarioCat": "academia", "gancho": "Existe um erro na ideia de que barriga depois dos 40 é falta de esforço.", "roteiro": ["Quando nada muda na rotina e o corpo muda, a resposta não está na rotina.", "Nessa fase a gordura muda de lugar. Ela sai das pernas e dos quadris e se concentra na barriga.", "Isso acontece mesmo com o peso parado na balança, e é por isso que a roupa denuncia antes do número.", "Não é falta de esforço. É o corpo seguindo outra regra, e ninguém te avisou da mudança."], "cta": "Salva aqui se o seu corpo mudou sem você mudar nada.", "trilha": "Identificação, piano leve.", "legenda": "Mudança de forma com peso estável tem explicação. Conteúdo educativo, cada caso exige avaliação individual.", "hashtags": ["mulher40mais", "recomposicaocorporal", "gorduraabdominal", "saudedamulher", "metabolismo"], "formula": "15 · Existe um erro nessa ideia sobre ___", "cuidado": "Sem número de peso, sem meta e sem antes e depois."},
+{"id": "27", "num": "07", "titulo": "O pote que não abriu", "tagLine": "Fórmula 45 · Quase ninguém presta atenção nisso", "pilar": "Autoridade", "quadro": "Ninguém te contou sobre os 40+", "cenario": "Cozinha de casa, com um pote na mão", "cenarioCat": "casa", "gancho": "Você não conseguiu abrir um pote essa semana. Quase ninguém presta atenção nesse sinal.", "roteiro": ["Não é engraçado. É o primeiro sinal de uma coisa que começa muito antes de aparecer.", "Depois dos 40, sem estímulo, a força e a massa muscular vão caindo todo ano, de pouquinho.", "Você não percebe no primeiro ano. Percebe quando o pote não abre, quando a escada cansa, quando levantar da cadeira baixa fica difícil.", "Músculo não é estética. É o que segura a sua autonomia nas próximas décadas."], "cta": "Testa aí agora e comenta se você conseguiu.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Perda de força começa silenciosa e aparece em gestos simples do dia. Conteúdo educativo, procure avaliação individual.", "hashtags": ["mulher40mais", "massamuscular", "forca", "longevidade", "recomposicaocorporal"], "formula": "45 · Quase ninguém presta atenção nisso", "cuidado": "Falar em perda progressiva, sem porcentagem fechada, porque varia muito de pessoa para pessoa."},
+{"id": "28", "num": "08", "titulo": "Perder peso ou perder gordura", "tagLine": "Fórmula 48 · ___ ou ___? Entenda a diferença", "pilar": "Autoridade", "quadro": "Corpo feminino 40+", "cenario": "Consultório, ao lado da balança ou do aparelho de avaliação", "cenarioCat": "consultorio", "gancho": "Perder peso ou perder gordura? Entenda a diferença antes de subir na balança de novo.", "roteiro": ["A balança soma tudo: músculo, gordura, água, o que você comeu ontem.", "Dá para perder músculo e ganhar gordura mantendo exatamente o mesmo número.", "O corpo muda de forma, a roupa veste diferente, a disposição cai, e o número não denuncia nada.", "É por isso que eu olho composição corporal, e não peso."], "cta": "Comenta se a sua balança está te enganando também.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Peso igual não significa corpo igual. Conteúdo educativo, cada caso é individual.", "hashtags": ["composicaocorporal", "mulher40mais", "massamagra", "saudedamulher", "metabolismo"], "formula": "48 · ___ ou ___? Entenda a diferença", "cuidado": "Sem número de peso e sem meta. Falar de composição, nunca de quanto emagrecer."},
+{"id": "29", "num": "09", "titulo": "Ainda dá pra ganhar músculo", "tagLine": "Fórmula 58 · O que pode melhorar o seu ___", "pilar": "Autoridade", "quadro": "Doutor, depois dos 40...", "cenario": "Consultório, sentado na cadeira da paciente", "cenarioCat": "consultorio", "gancho": "Me perguntaram se depois dos 40 ainda dá para ganhar músculo. Vou te mostrar o que faz diferença no resultado.", "roteiro": ["Dá. E para muita mulher essa é a parte que mais muda o dia a dia.", "O que muda depois dos 40 não é a possibilidade, é o que o corpo exige: estímulo de força de verdade, proteína suficiente e recuperação.", "Fazer só caminhada e comer pouco é a receita mais comum e a que menos funciona nessa fase.", "Não é sobre virar atleta. É sobre conseguir fazer o que você quer sem o corpo travar."], "cta": "Manda a sua pergunta na caixinha. Respondo uma toda semana.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Resposta de caixinha da semana. Conteúdo educativo, o plano de treino e saúde é sempre individual.", "hashtags": ["mulher40mais", "musculacao", "massamuscular", "forca", "saudedamulher"], "formula": "58 · O que pode melhorar o seu ___", "cuidado": "Orientação geral. Não prescrever treino, carga, dieta nem quantidade de proteína pelo perfil."},
+{"id": "30", "num": "10", "titulo": "A dieta que funcionou aos 35", "tagLine": "Fórmula 19 · Pare de perder tempo com ___", "pilar": "Identificação", "quadro": "Isso é hormônio ou idade?", "cenario": "Bastidor, chegando na clínica de manhã", "cenarioCat": "bastidor", "gancho": "Pare de refazer a dieta que funcionou pra você aos 35.", "roteiro": ["Aos 35 um corte na alimentação dava resultado em duas semanas. Aos 46 o mesmo corte não entrega nada.", "A quantidade de músculo que você tem, o sono, o estresse e a parte hormonal mudam a conta inteira do gasto de energia.", "E tem uma armadilha aí: o mesmo corte que antes só tirava gordura, agora costuma tirar músculo junto.", "Repetir a estratégia antiga é o erro mais comum, e o mais difícil de aceitar."], "cta": "Comenta a sua idade e o que parou de funcionar para você.", "trilha": "Identificação, piano leve.", "legenda": "O corpo mudou de regra e o método precisa mudar junto. Conteúdo educativo, procure avaliação individual.", "hashtags": ["mulher40mais", "metabolismo", "recomposicaocorporal", "saudedamulher", "emagrecimentocomsaude"], "formula": "19 · Pare de perder tempo com ___", "cuidado": "Sem número, sem prazo e sem promessa de resultado."},
+{"id": "31", "num": "11", "titulo": "A menstruação ainda vem certinha", "tagLine": "Fórmula 44 · Pouca gente sabe disso sobre ___", "pilar": "Autoridade", "quadro": "Ninguém te contou sobre os 40+", "cenario": "Consultório, mesa com exames abertos", "cenarioCat": "consultorio", "gancho": "Sua menstruação ainda vem certinha. Pouca gente sabe o que isso não significa.", "roteiro": ["A maior parte das mulheres acha que isso começa quando a menstruação falha. Começa muito antes.", "Essa fase de transição dura em média de quatro a oito anos, e ela acontece com o ciclo ainda funcionando.", "Um estudo publicado este ano mostrou que entre as mulheres de 40 a 44 anos, mais de quatro em cada dez não sabem dizer se já estão nessa fase.", "Esperar a menstruação desregular para procurar ajuda atrasa o cuidado em anos."], "cta": "Salva aqui e manda para uma amiga que acha que está cedo demais para isso.", "trilha": "Autoridade, ambiente calmo.", "legenda": "A transição começa antes da menstruação mudar. Conteúdo educativo, cada caso exige avaliação individual.", "hashtags": ["perimenopausa", "mulher40mais", "saudedamulher", "saudehormonal", "menopausa"], "formula": "44 · Pouca gente sabe disso sobre ___", "cuidado": "O dado é de pesquisa publicada em 2026 na revista Menopause, feita nos Estados Unidos. Fale em mais de quatro em cada dez, que é a margem segura."},
+{"id": "32", "num": "12", "titulo": "O exame que deu tudo normal", "tagLine": "Fórmula 13 · A verdade sobre ___", "pilar": "Autoridade", "quadro": "O que eu explicaria no consultório", "cenario": "Consultório, com um pedido de exame na mão", "cenarioCat": "consultorio", "gancho": "A verdade sobre aquele exame que você fez e deu tudo normal.", "roteiro": ["A mulher faz o exame, dá dentro da referência, e sai achando que está tudo certo.", "Só que nessa fase o hormônio oscila muito. Ele pode estar alto numa semana e baixo na outra.", "Por isso o exame é uma peça, e não a resposta. A resposta vem da sua história, dos seus sintomas e do conjunto.", "Quem decide só pelo papel está olhando uma foto de um dia, de uma coisa que muda o tempo todo."], "cta": "Comenta se você já ouviu que estava tudo normal e não se sentia bem.", "trilha": "Autoridade, sem trilha.", "legenda": "Exame é uma peça da avaliação, não a avaliação inteira. Conteúdo educativo, não substitui a consulta.", "hashtags": ["perimenopausa", "exames", "mulher40mais", "saudehormonal", "saudedamulher"], "formula": "13 · A verdade sobre ___", "cuidado": "Sem citar nome de exame específico e sem ensinar a pedir exame. O conteúdo explica o raciocínio, não substitui o pedido médico."},
+{"id": "33", "num": "13", "titulo": "O que vem antes do calor", "tagLine": "Fórmula 46 · Todo mundo está falando de ___, mas falta explicar isto", "pilar": "Autoridade", "quadro": "Isso é hormônio ou idade?", "cenario": "Academia, entre séries", "cenarioCat": "academia", "gancho": "Todo mundo fala do calor. Falta explicar o que vem muito antes dele.", "roteiro": ["Todo mundo associa essa fase ao calor e à onda de suor. Mas ele costuma chegar depois de outros.", "Antes dele vêm o sono picado, a irritação, a cabeça embaçada, a queda de disposição e a mudança no corpo.", "Como esses primeiros não parecem hormonais, a mulher não liga uma coisa à outra e deixa passar.", "Quando o calor chega, ela já conviveu anos com o resto achando que era estresse."], "cta": "Comenta qual desses foi o primeiro que você sentiu.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Os primeiros sinais raramente são os mais conhecidos. Conteúdo educativo, procure avaliação individual.", "hashtags": ["perimenopausa", "mulher40mais", "saudedamulher", "sintomas", "saudehormonal"], "formula": "46 · Todo mundo está falando de ___, mas falta explicar isto", "cuidado": "Conjunto de sinais não fecha diagnóstico, e isso precisa estar claro na fala ou na legenda."},
+{"id": "34", "num": "14", "titulo": "Não é só com você", "tagLine": "Fórmula 38 · Antes de ___, saiba disso", "pilar": "Conexão", "quadro": "Perguntas que tem vergonha de fazer", "cenario": "Consultório, enquadramento mais fechado", "cenarioCat": "consultorio", "gancho": "Antes de achar que é só com você, saiba disso.", "roteiro": ["Perguntaram se a falta de vontade é normal e se tem o que fazer.", "Primeiro: é uma das queixas mais comuns dessa fase, e quase ninguém fala em voz alta.", "Segundo: tem explicação. Hormônio, sono, estresse e a relação com o próprio corpo entram todos nessa conta.", "Terceiro: tem o que fazer, e o caminho depende do que está causando. Por isso ninguém responde isso por mensagem."], "cta": "Manda a sua pergunta na caixinha, inclusive as que você tem vergonha de fazer.", "trilha": "Conexão, piano emocional.", "legenda": "Resposta de caixinha da semana. Conteúdo educativo e geral, a conduta é sempre individual e definida em consulta.", "hashtags": ["mulher40mais", "saudedamulher", "perimenopausa", "bemestar", "duvidas"], "formula": "38 · Antes de ___, saiba disso", "cuidado": "Tema sensível. Falar de forma clínica e acolhedora, sem detalhe íntimo, sem indicar conduta e sem prometer resultado."},
+{"id": "35", "num": "15", "titulo": "Cuida de todo mundo menos de você", "tagLine": "Fórmula 50 · Em qual desses cenários você se reconhece?", "pilar": "Conexão", "quadro": "Corpo feminino 40+", "cenario": "Externa, caminhando ao ar livre", "cenarioCat": "externa", "gancho": "Em qual desses cenários você se reconhece: cuida de todo mundo, ou cuida de você também?", "roteiro": ["Essa conta aparece em quase toda primeira consulta aqui.", "A mulher lembra o exame do marido, a vacina do filho, a consulta da mãe. A dela, não lembra nem o ano.", "Não é esquecimento. É ordem de prioridade, e a fila nunca acaba sozinha.", "Cuidar de você não tira nada de ninguém. Na prática, é o contrário."], "cta": "Marca aqui uma amiga que também se coloca por último.", "trilha": "Conexão, trilha cinematográfica leve.", "legenda": "A agenda da casa inteira cabe na cabeça dela, menos ela. Conteúdo educativo, procure avaliação individual.", "hashtags": ["mulher40mais", "autocuidado", "saudedamulher", "qualidadedevida", "belohorizonte"], "formula": "50 · Em qual desses cenários você se reconhece?", "cuidado": "Sem culpa e sem alarme. O tom é de reconhecimento, não de cobrança."},
+{"id": "36", "num": "16", "titulo": "Três perguntas antes do exame", "tagLine": "Fórmula 56 · 3 formas de ___", "pilar": "Autoridade", "quadro": "O que eu explicaria no consultório", "cenario": "Consultório, sentado à mesa", "cenarioCat": "consultorio", "gancho": "As três perguntas que eu faço antes de olhar qualquer exame seu.", "roteiro": ["A primeira é como está o seu sono de verdade, não o que você gostaria que fosse.", "A segunda é o que mudou na sua energia, no seu humor e no seu corpo no último ano.", "A terceira é o que você já tentou e por que parou. Isso me diz mais do que qualquer resultado.", "O exame vem depois, para confirmar ou descartar o que a conversa já apontou."], "cta": "Comenta qual dessas três você nunca foi perguntada.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Conversa direciona, exame confirma. Conteúdo educativo, a avaliação é sempre individual.", "hashtags": ["mulher40mais", "saudedamulher", "avaliacao", "perimenopausa", "belohorizonte"], "formula": "56 · 3 formas de ___", "cuidado": "Descrever raciocínio de consulta, sem listar exame específico e sem prescrever pelo perfil."},
+{"id": "37", "num": "17", "titulo": "Hormônio não resolve tudo", "tagLine": "Fórmula 42 · Um conselho sobre ___ que merece ser questionado", "pilar": "Opinião", "quadro": "Isso é hormônio ou idade?", "cenario": "Consultório, em pé ao lado da maca", "cenarioCat": "consultorio", "gancho": "Um conselho que você escuta o tempo todo e que merece ser questionado: hormônio resolve tudo.", "roteiro": ["Quando tem indicação, é uma ferramenta muito boa, e eu uso.", "Mas ela não repõe sono, não constrói músculo e não organiza a sua alimentação.", "Tem mulher que melhora muito só arrumando essas três coisas, e nem precisa do resto.", "E tem mulher que precisa das duas coisas juntas. Quem define isso é a avaliação, nunca o que ela viu na internet."], "cta": "Salva aqui antes de esperar que um tratamento só resolva tudo.", "trilha": "Opinião, sem trilha.", "legenda": "Ferramenta boa dentro de um conjunto. Não indico nem contraindico conduta por aqui, isso se decide em consulta.", "hashtags": ["saudehormonal", "mulher40mais", "perimenopausa", "saudedamulher", "criterio"], "formula": "42 · Um conselho sobre ___ que merece ser questionado", "cuidado": "Nunca afirmar que a reposição é segura ou perigosa de forma geral. Sempre individual, sempre em consulta, e sem nome de medicação nem dose."},
+{"id": "38", "num": "18", "titulo": "Já passou por três consultórios", "tagLine": "Fórmula 12 · Isso pode surpreender você", "pilar": "Conexão", "quadro": "O que eu explicaria no consultório", "cenario": "Recepção da clínica", "cenarioCat": "bastidor", "gancho": "Isso pode te surpreender: a mulher que senta nessa cadeira já passou por três consultórios antes.", "roteiro": ["E ela chega com uma frase parecida: eu já tentei explicar isso e ninguém me levou a sério.", "A consulta inteira muda quando a pessoa não precisa provar que o que ela sente é real.", "Escutar a história completa não é gentileza. É método, porque metade do que eu preciso saber está no que ela conta.", "Quando a mulher se sente ouvida, ela também cuida melhor do que a gente combina."], "cta": "Comenta se você já se sentiu não levada a sério numa consulta.", "trilha": "Conexão, piano emocional.", "legenda": "Escuta é parte do método, não um detalhe do atendimento. Conteúdo educativo, cada caso é individual.", "hashtags": ["mulher40mais", "saudedamulher", "acolhimento", "cuidado", "belohorizonte"], "formula": "12 · Isso pode surpreender você", "cuidado": "Sem depoimento de paciente, sem caso identificável e sem comparação com outros profissionais."},
+{"id": "39", "num": "19", "titulo": "Qual médico cuida disso", "tagLine": "Fórmula 14 · O que quase ninguém explica sobre isso", "pilar": "Autoridade", "quadro": "Doutor, depois dos 40...", "cenario": "Carro, único do mês, com luz e enquadramento diferentes do habitual", "cenarioCat": "carro", "gancho": "Me perguntaram qual médico cuida disso. Essa é a parte que quase ninguém explica direito.", "roteiro": ["Mais de um profissional pode acompanhar essa fase, e isso não é um problema.", "O que faz diferença não é a placa na porta. É se a pessoa olha o conjunto ou só um pedaço.", "Eu trabalho juntando quatro coisas: o que os exames mostram, a sua composição corporal, o seu treino e a sua alimentação.", "Se você já tem alguém que faz isso com você, ótimo. Se ninguém nunca olhou tudo junto, aí vale conversar."], "cta": "Manda a sua pergunta na caixinha, e o contato do consultório está no perfil.", "trilha": "Autoridade, ambiente calmo.", "legenda": "Resposta de caixinha da semana. Conteúdo educativo, atendimento em Belo Horizonte, contato no perfil.", "hashtags": ["mulher40mais", "saudedamulher", "perimenopausa", "belohorizonte", "avaliacao"], "formula": "14 · O que quase ninguém explica sobre isso", "cuidado": "O card mais sensível do mês. Nunca declarar nem sugerir especialidade que não esteja registrada. Falar do que ele faz, nunca do que ele é. Nenhuma comparação com outra categoria médica."},
+{"id": "40", "num": "20", "titulo": "Se você se identificou esse mês", "tagLine": "Fórmula 53 · Se você se identifica com isso, continue", "pilar": "Aspiracional", "quadro": "Corpo feminino 40+", "cenario": "Externa, na frente da clínica", "cenarioCat": "externa", "gancho": "Se você se identificou com algum vídeo meu esse mês, esse aqui é pra você.", "roteiro": ["Nada do que você sente é da sua cabeça, e nada disso precisa ser aguentado calada.", "A primeira coisa não é tratamento. É entender o que está acontecendo com o seu corpo agora.", "A avaliação olha os seus exames, a sua composição corporal, a sua rotina e a sua história.", "A partir disso a gente monta um caminho que caiba na sua vida, e não na média das pessoas."], "cta": "Contato no perfil para entender como funciona a avaliação. Atendo aqui em Belo Horizonte.", "trilha": "Aspiracional, trilha que sobe.", "legenda": "Atendimento em Belo Horizonte. Conteúdo educativo, a avaliação e a conduta são sempre individuais.", "hashtags": ["mulher40mais", "belohorizonte", "saudedamulher", "perimenopausa", "avaliacao"], "formula": "53 · Se você se identifica com isso, continue", "cuidado": "O único convite direto do mês. Sem preço, sem promessa e sem urgência."},
+];
+
+/* ---- Ciclo 2: GUIA DE ROTEIROS 2 ---- */
+const SEMANAS_C2 = [
+  {n:1, titulo:"Não é da sua cabeça", objetivo:"Sintoma puro, sem nenhum termo técnico. É a semana de maior alcance e a que traz mulher nova.", indicador:"Tudo aqui é sintoma que ela sente e não sabe nomear. Nenhum termo técnico em nenhuma abertura."},
+  {n:2, titulo:"O corpo mudou de regra", objetivo:"Corpo, força e composição corporal. A ponte entre saúde e o que ela quer de verdade.", indicador:"A semana da recomposição corporal. Sai do hormônio e entra no corpo."},
+  {n:3, titulo:"O que ninguém te explicou", objetivo:"Quebra de crença. É onde ele mostra o que sabe sem dar aula, e onde mais gera compartilhamento.", indicador:"Junto com a semana 1, deve liderar em compartilhamento no direct."},
+  {n:4, titulo:"O caminho", objetivo:"Mostra o método, responde a objeção e convida. Só aqui tem convite direto.", indicador:"Transforma identificação em consulta, sem venda agressiva."},
+];
+const CENARIOS_C2 = [
+  {nome:"Consultório", reels:[1,3,4,8,9,11,12,14,16,17], porque:"É onde a autoridade mora. Varie a mesa, a maca, a cadeira da paciente e o enquadramento.", cat:"consultorio"},
+  {nome:"Externa e caminhando", reels:[5,15,20], porque:"Tira a estética de conteúdo médico e traz movimento para o feed.", cat:"externa"},
+  {nome:"Academia", reels:[6,13], porque:"Prova o interesse real por treino e liga saúde com o que ela quer de verdade.", cat:"academia"},
+  {nome:"Cozinha de casa", reels:[2,7], porque:"Proximidade. É onde o tom de conversa fica mais natural.", cat:"casa"},
+  {nome:"Bastidor e recepção", reels:[10,18], porque:"Mostra rotina sem precisar de produção nenhuma.", cat:"bastidor"},
+  {nome:"Carro", reels:[19], porque:"Uma vez só, de propósito, com luz e enquadramento diferentes do habitual.", cat:"carro"},
+];
+const CAT_LABEL_C2 = {consultorio:"Consultório", externa:"Externa", academia:"Academia", casa:"Cozinha de casa", bastidor:"Bastidor/recepção", carro:"Carro"};
+const QUADROS_C2 = [
+  {nome:"Ninguém te contou sobre os 40+", oque:"Conteúdo de descoberta, para quem nem sabe o que investigar.", reels:[1,2,7,11]},
+  {nome:"O que eu explicaria no consultório", oque:"Respostas no tom de quem conversa com a paciente.", reels:[3,12,16,18]},
+  {nome:"Doutor, depois dos 40...", oque:"A caixinha vira quadro fixo: uma quinta por semana, sempre no mesmo formato.", reels:[4,9,14,19]},
+  {nome:"Corpo feminino 40+", oque:"Composição corporal, treino, sono e hábitos.", reels:[5,6,8,15,20]},
+  {nome:"Isso é hormônio ou idade?", oque:"Separa o que é hormonal do que é estilo de vida.", reels:[10,13,17]},
+  {nome:"Perguntas que tem vergonha de fazer", oque:"O que ela não pergunta em voz alta. Também responde caixinha na quinta.", reels:[14]},
+];
+const TRILHAS_C2 = [
+  {nome:"Conexão", uso:"Quando ela precisa se reconhecer antes de ouvir a explicação.", desc:"Piano leve, piano emocional ou trilha cinematográfica leve.", h:[10,16,12,20,14]},
+  {nome:"Autoridade", uso:"Caixinha e explicação de corpo e fisiologia.", desc:"Ambiente calmo. O Reel 12 vai sem trilha.", h:[12,12,13,12,12]},
+  {nome:"Identificação", uso:"O corpo mudou de regra e ela não foi avisada.", desc:"Piano leve.", h:[8,14,10,18,12]},
+  {nome:"Opinião", uso:"Ponto de vista que pede peso.", desc:"Sem trilha, só a voz.", h:[6,10,16,8,14]},
+  {nome:"Aspiracional", uso:"O único convite direto do mês.", desc:"Trilha que sobe.", h:[8,13,18,22,26]},
+];
+const CHECKLIST_C2 = [
+  "O gancho abre por cena do dia a dia nos dois primeiros segundos, sem nenhum termo técnico?",
+  "O lugar de gravação é o que está no card, e é diferente do vídeo anterior?",
+  "Você trocou de roupa em relação ao vídeo gravado antes deste?",
+  "A legenda deixa claro que é conteúdo educativo e que a avaliação é individual?",
+  "Nenhuma frase promete resultado, prazo ou declara especialidade não registrada?",
+  "Nenhum conteúdo sugere que outro profissional errou?",
+  "Sem nome de medicação, sem dose e sem número de peso?",
+  "As hashtags são do assunto, sem acento e sem cê-cedilha, de três a cinco por publicação?",
+];
+const CONTRASTE_C2 = [
+  ["Progesterona é melhor oral ou transdérmica?", "Você acorda às três da manhã, todo dia, no mesmo horário."],
+  ["Dosagem de testosterona feminina", "Você tentou abrir um pote essa semana e não conseguiu."],
+  ["Climatério e alterações hormonais", "Você esqueceu o nome de uma pessoa que conhece há vinte anos."],
+  ["Composição corporal e massa magra", "Seu peso é o mesmo e você se sente pior no espelho."],
+];
+const FORMULAS_C2 = [
+  {titulo:"Para fazer ela se reconhecer", itens:[
+    "Se você acorda cansada mesmo dormindo oito horas, presta atenção nisso.",
+    "Sua calça fecha do mesmo jeito e o corpo mudou de forma. Isso acontece com você?",
+    "Você passou a dormir com o ventilador ligado no inverno. Quase ninguém presta atenção nesse sinal.",
+    "Em qual desses cenários você se reconhece: cansada ao acordar, ou cansada só de tarde?",
+    "Você espera a menstruação parar para procurar ajuda? Esse é o erro mais comum.",
+    "Antes de achar que o problema é falta de força de vontade, saiba disso.",
+  ]},
+  {titulo:"Para derrubar uma ideia errada", itens:[
+    "A verdade sobre o exame de hormônio que deu tudo normal.",
+    "Existe um erro na ideia de que isso só começa depois dos 50.",
+    "Um conselho que você escuta sempre e merece ser questionado: come menos e mexe mais.",
+    "Pouca gente sabe que esse sintoma pode aparecer dez anos antes.",
+    "Todo mundo fala de reposição hormonal. Falta explicar quem não precisa.",
+    "Tem uma coisa sobre ganho de peso nessa fase que quase ninguém explica.",
+    "Cansaço ou falta de sono? Entenda a diferença, porque o tratamento é outro.",
+  ]},
+  {titulo:"Para corrigir o caminho dela", itens:[
+    "Pare de perder tempo com dieta de mil e duzentas calorias nessa fase.",
+    "É por isso que o seu treino pode não estar funcionando como funcionava antes.",
+    "Em vez de cortar mais comida, faça isso primeiro.",
+    "Esse erro pode estar atrapalhando o seu sono há anos.",
+    "Você precisa saber disso antes de começar qualquer tratamento.",
+    "Faça isso antes de aceitar que é só da idade.",
+  ]},
+  {titulo:"Para ela considerar a consulta", itens:[
+    "Reposição hormonal engorda? Vou esclarecer isso de uma vez.",
+    "Três sinais que eu procuro antes de pedir qualquer exame.",
+    "Cinco coisas que podem estar atrapalhando o seu sono depois dos 40.",
+    "Eu li o estudo para você não precisar ler. O que ele diz sobre perda de músculo.",
+    "O que pode melhorar o seu sono sem remédio nenhum.",
+  ]},
+];
+const EVITAR_C2 = [
+  {titulo:"Teste pessoal", desc:"Eu testei isso por 30 dias, veja o que aconteceu quando eu fiz, o resultado me surpreendeu."},
+  {titulo:"Arrependimento próprio", desc:"Eu faria isso diferente hoje, meu maior erro foi este, se eu começasse hoje faria assim."},
+  {titulo:"Ordem seca", desc:"Pare de fazer isso, faça isso no lugar, faça isso e não aquilo. Sem o assunto na frase, viram palpite."},
+  {titulo:"Culpa", desc:"Você está fazendo isso errado, ignorar isso vai te custar caro. A mulher de 40 e poucos já chega culpada, e culpa não faz ela marcar consulta."},
+];
+const GANCHO_STEPS_C2 = [
+  {n:"1", titulo:"Escolha a queixa, não o assunto", desc:"Assunto é o que você sabe. Queixa é o que ela sente. Escreva a frase exata que a paciente diz na cadeira.", onde:"\"não consigo dormir\""},
+  {n:"2", titulo:"Encaixe numa fórmula do banco", desc:"A mesma queixa em moldes diferentes: a queixa é uma, os ganchos são dez.", onde:"\"se você acorda às três da manhã…\""},
+  {n:"3", titulo:"Corte tudo que vem antes da queixa", desc:"Oi gente, hoje eu quero falar sobre: fora. Se precisar de contexto, ele entra no segundo quatro, não no zero.", onde:"a queixa é a 1ª frase"},
+  {n:"4", titulo:"Leia em voz alta cronometrando", desc:"O gancho precisa caber em três segundos de fala natural. Ficou sem ar? Corte uma oração e leia de novo.", onde:"≤ 3 segundos"},
+];
+const STORIES_C2 = [
+  ["Vida real", "Academia, alimentação, estudo, caminho para a clínica", "2 ou 3 por dia"],
+  ["Consultório", "Bastidor permitido, aprendizado, reflexão do dia", "2 por dia"],
+  ["Educação", "Uma dúvida simples por vez, no máximo duas telas", "1 ou 2 por dia"],
+  ["Opinião", "O que te incomoda no que falam sobre corpo e hormônio por aí", "1 por dia"],
+  ["Conversão", "Caixinha, convite, contato no perfil", "3 vezes por semana, nunca todo dia"],
+];
+const CAIXINHA_C2 = [
+  "Abra a caixinha toda quinta, sempre com a mesma frase de chamada, e repita no fim do dia para quem não viu de manhã.",
+  "Na sexta, copie todas as perguntas para uma lista única. Marque as que apareceram mais de uma vez.",
+  "A mais repetida vira o vídeo de caixinha da semana seguinte, com o print da pergunta na tela nos dois primeiros segundos.",
+  "As perguntas que sobram ficam guardadas. Em dois meses você tem um banco que acaba com a decisão do que gravar.",
+  "Pergunta sobre caso individual não vira vídeo. Ela vira o exemplo de por que aquilo precisa de consulta.",
+];
+const METRICAS_C2 = [
+  ["Quantas pessoas que não te seguem foram alcançadas", "É o número que diz se o conteúdo de descoberta funcionou. Abaixo de 40% quer dizer que o vídeo só circulou na bolha."],
+  ["Compartilhamento no direct", "A semana 1 e a semana 3 devem liderar aqui. É o conteúdo que ela manda para a amiga que sente o mesmo."],
+  ["Perguntas novas na caixinha", "Cada pergunta que chegar é tema do mês que vem, escrito com as palavras da própria paciente."],
+  ["Contatos no perfil", "A conta do mês não é alcance. É quantas mulheres procuraram o consultório depois de ver."],
+];
+
+/* ---- Ciclos ---- */
+const CYCLES = {
+  "1": {SEMANAS:SEMANAS_C1, REELS:REELS_C1, PILARES:PILARES_C1, TRILHAS:TRILHAS_C1, CENARIOS:CENARIOS_C1, QUADROS:QUADROS_C1, CHECKLIST:CHECKLIST_C1, CAT_LABEL:CAT_LABEL_C1,
+        pilarAll:"Todos os pilares", overviewDesc:"4 semanas · 20 Reels prontos para gravar, sem decisão na hora da gravação.", sub:"Dr. Vitor Sabioni · Guia de Roteiros 1"},
+  "2": {SEMANAS:SEMANAS_C2, REELS:REELS_C2, PILARES:null, TRILHAS:TRILHAS_C2, CENARIOS:CENARIOS_C2, QUADROS:QUADROS_C2, CHECKLIST:CHECKLIST_C2, CAT_LABEL:CAT_LABEL_C2,
+        pilarAll:"Todas as trilhas", overviewDesc:"Novo cronograma · 20 Reels que abrem pelo sintoma que ela vive, não pelo nome que ela não procura.", sub:"Dr. Vitor Sabioni · Guia de Roteiros 2"},
+};
+const CYCLE_KEY = 'reels40mais:cycle';
+let CYCLE = "2";
+try { const saved = localStorage.getItem(CYCLE_KEY); if(saved && CYCLES[saved]) CYCLE = saved; } catch(e) {}
+let SEMANAS, REELS, PILARES, TRILHAS, CENARIOS, QUADROS, CHECKLIST, CAT_LABEL;
+function bindCycle(){
+  ({SEMANAS, REELS, PILARES, TRILHAS, CENARIOS, QUADROS, CHECKLIST, CAT_LABEL} = CYCLES[CYCLE]);
+}
+bindCycle();
+const ALL_REELS = [...REELS_C1, ...REELS_C2];
+const numOf = r => r.num || r.id;
+const weekOf = r => Math.ceil(+numOf(r)/5);
+
 const STAGES = ["pendente","gravado","editado","publicado"];
 const STAGE_LABEL = {pendente:"Pendente", gravado:"Gravado", editado:"Editado", publicado:"Publicado"};
 
 /* ===================== STATE ===================== */
 const DEFAULT_STATE = () => ({status:"pendente", responsavel:"", notas:"", autoDetected:false});
 const state = {};
-REELS.forEach(r => state[r.id] = DEFAULT_STATE());
+ALL_REELS.forEach(r => state[r.id] = DEFAULT_STATE());
 
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -823,7 +1115,7 @@ function renderKpis(){
 
 function renderWeekCards(){
   document.getElementById('weekCards').innerHTML = SEMANAS.map(s => {
-    const reels = REELS.filter(r => Math.ceil(+r.id/5) === s.n);
+    const reels = REELS.filter(r => weekOf(r) === s.n);
     const pub = reels.filter(r => state[r.id].status === 'publicado').length;
     const pct = Math.round(pub/reels.length*100);
     return `
@@ -841,6 +1133,19 @@ function renderWeekCards(){
 }
 
 function renderPilarBars(){
+  if(!PILARES){
+    const counts = {};
+    REELS.forEach(r => counts[r.pilar] = (counts[r.pilar]||0) + 1);
+    const rows = TRILHAS.map(t => ({nome:t.nome, n:counts[t.nome]||0}));
+    const mx = Math.max(...rows.map(x=>x.n));
+    document.getElementById('pilarBars').innerHTML = rows.map(x => `
+    <div class="barlist__row">
+      <span class="barlist__label">${escapeHtml(x.nome)}</span>
+      <div class="barlist__track"><div class="barlist__fill" style="width:${x.n/mx*100}%; background:color-mix(in srgb, var(--brand) ${40+Math.round(x.n/mx*60)}%, var(--surface-2))"></div></div>
+      <span class="barlist__val tnum">${x.n} reels</span>
+    </div>`).join('');
+    return;
+  }
   const max = Math.max(...PILARES.map(p=>p.peso));
   document.getElementById('pilarBars').innerHTML = PILARES.map((p,i) => {
     const shade = 30 + Math.round((1 - p.peso/max) * 45);
@@ -881,13 +1186,13 @@ function renderStepper(id){
 }
 
 function reelRowHtml(r){
-  const dayIdx = (+r.id - 1) % 5;
+  const dayIdx = (+numOf(r) - 1) % 5;
   return `
   <article class="reel-row" data-id="${r.id}">
     <div class="reel-row__head" tabindex="0" role="button" aria-expanded="false">
       <div class="reel-row__day">
         <span class="reel-row__daylabel">${DIAS[dayIdx].slice(0,3)}</span>
-        <span class="reel-row__num mono">${r.id}</span>
+        <span class="reel-row__num mono">${numOf(r)}</span>
       </div>
       <div class="reel-row__title">
         <span class="reel-row__titletext">${escapeHtml(r.titulo)}</span>
@@ -907,12 +1212,14 @@ function reelRowHtml(r){
       <div>
         <span class="detail__label">Gancho (tela)</span>
         <div class="detail__gancho">${escapeHtml(r.gancho)}</div>
+        ${r.formula ? `<div class="detail__meta-row" style="margin-top:8px;"><span class="tag">Fórmula do gancho · ${escapeHtml(r.formula)}</span></div>` : ''}
         <div class="detail__field">
           <span class="detail__label">Roteiro falado</span>
           <ol class="detail__steps">${r.roteiro.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ol>
         </div>
       </div>
       <div>
+        ${r.cuidado ? `<span class="detail__label">Cuidado</span><div class="detail__cuidado">${escapeHtml(r.cuidado)}</div>` : ''}
         <span class="detail__label">Cenário</span>
         <p style="font-size:12.5px; margin-bottom:12px;">${escapeHtml(r.cenario)}</p>
         <div class="detail__meta-row" style="margin-bottom:12px;">
@@ -938,12 +1245,12 @@ function passesFilters(r){
   const pilar = document.getElementById('fPilar').value;
   const cenario = document.getElementById('fCenario').value;
   const status = document.getElementById('fStatus').value;
-  if(semana && Math.ceil(+r.id/5) !== +semana) return false;
+  if(semana && weekOf(r) !== +semana) return false;
   if(pilar && r.pilar !== pilar) return false;
   if(cenario && r.cenarioCat !== cenario) return false;
   if(status && state[r.id].status !== status) return false;
   if(q){
-    const hay = (r.titulo+' '+r.quadro+' '+r.gancho+' '+r.hashtags.join(' ')).toLowerCase();
+    const hay = (r.titulo+' '+r.quadro+' '+r.gancho+' '+(r.formula||'')+' '+r.hashtags.join(' ')).toLowerCase();
     if(!hay.includes(q)) return false;
   }
   return true;
@@ -952,7 +1259,7 @@ function passesFilters(r){
 function renderReelList(){
   const list = document.getElementById('reelList');
   const groups = SEMANAS.map(s => {
-    const reels = REELS.filter(r => Math.ceil(+r.id/5) === s.n && passesFilters(r));
+    const reels = REELS.filter(r => weekOf(r) === s.n && passesFilters(r));
     return {s, reels};
   }).filter(g => g.reels.length);
 
@@ -976,6 +1283,8 @@ function renderReelList(){
 /* filters + population */
 function populateFilterOptions(){
   const pilarSel = document.getElementById('fPilar');
+  pilarSel.innerHTML = `<option value="">${CYCLES[CYCLE].pilarAll}</option>`;
+  document.getElementById('fCenario').innerHTML = '<option value="">Todos os cenários</option>';
   [...new Set(REELS.map(r=>r.pilar))].forEach(p => {
     const o = document.createElement('option'); o.value=p; o.textContent=p; pilarSel.appendChild(o);
   });
@@ -1040,6 +1349,7 @@ function renderQuadrosTable(){
 
 /* ===================== RENDER: PILARES / TRILHAS ===================== */
 function renderPilaresTable(){
+  if(!PILARES) return;
   document.querySelector('#tblPilares tbody').innerHTML = PILARES.map(p => `
     <tr><td><strong>${escapeHtml(p.nome)}</strong></td><td class="tnum">${p.peso}%</td><td>${escapeHtml(p.funcao)}</td></tr>
   `).join('');
@@ -1048,9 +1358,10 @@ function renderTrilhas(){
   document.getElementById('trilhaGrid').innerHTML = TRILHAS.map(t => `
     <div class="card trilha-card">
       <div class="waveform">${t.h.map(h=>`<i style="height:${h}px"></i>`).join('')}</div>
-      <span class="trilha-card__title">${t.n} · ${escapeHtml(t.nome)}</span>
+      <span class="trilha-card__title">${t.n || (TRILHAS.indexOf(t)+1)} · ${escapeHtml(t.nome)}</span>
       <p class="trilha-card__uso">${escapeHtml(t.uso)}</p>
       <p class="trilha-card__desc">${escapeHtml(t.desc)}</p>
+      ${PILARES ? '' : `<div class="reelchips">${REELS.filter(r=>r.pilar===t.nome).map(r=>`<span class="reelchip">${numOf(r)}</span>`).join('')}</div>`}
     </div>`).join('');
 }
 
@@ -1078,19 +1389,79 @@ function renderGanchos(){
   document.getElementById('mecanismo').innerHTML = MECANISMO.map(r => `<li>${escapeHtml(r)}</li>`).join('');
 }
 
+/* ===================== RENDER: CICLO 2 EXTRAS ===================== */
+function renderCycle2(){
+  document.getElementById('contrastRow').innerHTML =
+    `<div class="contrast__h">O jeito que ela não procura</div><div class="contrast__h">O jeito que ela vive</div>` +
+    CONTRASTE_C2.map(c => `<div class="contrast__busca">${escapeHtml(c[0])}</div><div class="contrast__vive">${escapeHtml(c[1])}</div>`).join('');
+  document.getElementById('calTable').innerHTML =
+    `<thead><tr><th>Semana</th>${DIAS.map(d=>`<th>${d}</th>`).join('')}</tr></thead><tbody>` +
+    SEMANAS_C2.map(s => `<tr><td class="cal__week">${s.n} · ${escapeHtml(s.titulo)}</td>${DIAS.map((d,i) => {
+      const n = (s.n-1)*5 + i + 1; const num = String(n).padStart(2,'0');
+      const cls = i===3 ? 'cal__cx' : (n===20 ? 'cal__cv' : '');
+      const tag = i===3 ? '<small>caixinha</small>' : (n===20 ? '<small>convite</small>' : '');
+      return `<td class="${cls}">${num}${tag}</td>`;
+    }).join('')}</tr>`).join('') + '</tbody>';
+  document.querySelector('#tblMetricas tbody').innerHTML = METRICAS_C2.map(m => `<tr><td><strong>${escapeHtml(m[0])}</strong></td><td>${escapeHtml(m[1])}</td></tr>`).join('');
+  document.getElementById('avoidGrid').innerHTML = EVITAR_C2.map(e => `<div class="card avoid-card"><h4>${escapeHtml(e.titulo)}</h4><p>${escapeHtml(e.desc)}</p></div>`).join('');
+  document.querySelector('#tblCuidados tbody').innerHTML = REELS_C2.map(r => `<tr><td style="white-space:nowrap;"><span class="reelchip">${r.num}</span> <strong>${escapeHtml(r.titulo)}</strong></td><td>${escapeHtml(r.cuidado)}</td></tr>`).join('');
+  document.getElementById('formulaGrid').innerHTML = FORMULAS_C2.map(g => `
+    <div class="card gancho-card">
+      <h4>${escapeHtml(g.titulo)}</h4>
+      <ul>${g.itens.map(i=>`<li>${escapeHtml(i)}</li>`).join('')}</ul>
+    </div>`).join('');
+  document.getElementById('ganchoSteps').innerHTML = GANCHO_STEPS_C2.map(s => `
+    <div class="card step-flow">
+      <span class="step-flow__n">${s.n}</span>
+      <div class="step-flow__title">${escapeHtml(s.titulo)}</div>
+      <p class="step-flow__desc">${escapeHtml(s.desc)}</p>
+      <div class="step-flow__where">${escapeHtml(s.onde)}</div>
+    </div>`).join('');
+  document.querySelector('#tblStories tbody').innerHTML = STORIES_C2.map(s => `<tr><td><strong>${escapeHtml(s[0])}</strong></td><td>${escapeHtml(s[1])}</td><td>${escapeHtml(s[2])}</td></tr>`).join('');
+  document.getElementById('caixinha2').innerHTML = CAIXINHA_C2.map(c => `<li>${escapeHtml(c)}</li>`).join('');
+}
+
+/* ===================== CICLO: TROCA ===================== */
+function renderCycleDependent(){
+  document.body.dataset.cycle = CYCLE;
+  document.querySelectorAll('[data-cycle-btn]').forEach(b => {
+    const on = b.dataset.cycleBtn === CYCLE;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-selected', String(on));
+  });
+  document.querySelector('.brand__sub').textContent = CYCLES[CYCLE].sub;
+  VIEW_META.overview.desc = CYCLES[CYCLE].overviewDesc;
+  VIEW_META.pilares.title = CYCLE === "1" ? "Pilares & trilhas" : "Trilhas & métricas";
+  VIEW_META.ganchos.title = CYCLE === "1" ? "Banco de ganchos" : "Fórmulas & stories";
+  VIEW_META.ganchos.desc = CYCLE === "1" ? "Aberturas reserva e o fluxo da caixinha para Reel." : "Banco de fórmulas de gancho, mapa de stories e a caixinha.";
+  populateFilterOptions();
+  renderKpis();
+  renderWeekCards();
+  renderPilarBars();
+  renderCenarioBars();
+  renderReelList();
+  renderCenariosTable();
+  renderQuadrosTable();
+  renderPilaresTable();
+  renderTrilhas();
+  renderCompliance();
+  const active = document.querySelector('.nav__btn.active');
+  showView(active ? active.dataset.view : 'overview');
+}
+document.getElementById('cycleSwitch').addEventListener('click', e => {
+  const b = e.target.closest('[data-cycle-btn]');
+  if(!b || b.dataset.cycleBtn === CYCLE) return;
+  CYCLE = b.dataset.cycleBtn;
+  try { localStorage.setItem(CYCLE_KEY, CYCLE); } catch(err) {}
+  bindCycle();
+  ['fSearch','fSemana','fStatus'].forEach(id => document.getElementById(id).value = '');
+  renderCycleDependent();
+});
+
 /* ===================== BOOT ===================== */
-populateFilterOptions();
-renderKpis();
-renderWeekCards();
-renderPilarBars();
-renderCenarioBars();
-renderReelList();
-renderCenariosTable();
-renderQuadrosTable();
-renderPilaresTable();
-renderTrilhas();
-renderCompliance();
 renderGanchos();
+renderCycle2();
+renderCycleDependent();
 showView('overview');
 loadState(true);
 setInterval(() => loadState(false), 8000);

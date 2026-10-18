@@ -33,6 +33,27 @@ const TITULOS = {
   '18': 'O que elas mais comentam',
   '19': 'Pra quem faz sentido avaliar',
   '20': 'Se você está em BH',
+  // Ciclo 2 (Guia de Roteiros 2) — no painel aparecem como 01-20 do Ciclo 2.
+  '21': 'Chorar com propaganda',
+  '22': 'Esquece nome no meio da frase',
+  '23': 'Quando a ansiedade não melhora',
+  '24': 'Isso é da idade ou não é',
+  '25': 'Acordar às três da manhã',
+  '26': 'Barriga não é falta de esforço',
+  '27': 'O pote que não abriu',
+  '28': 'Perder peso ou perder gordura',
+  '29': 'Ainda dá pra ganhar músculo',
+  '30': 'A dieta que funcionou aos 35',
+  '31': 'A menstruação ainda vem certinha',
+  '32': 'O exame que deu tudo normal',
+  '33': 'O que vem antes do calor',
+  '34': 'Não é só com você',
+  '35': 'Cuida de todo mundo menos de você',
+  '36': 'Três perguntas antes do exame',
+  '37': 'Hormônio não resolve tudo',
+  '38': 'Já passou por três consultórios',
+  '39': 'Qual médico cuida disso',
+  '40': 'Se você se identificou esse mês',
 };
 
 const COMBINING_MARKS = new RegExp('[' + String.fromCharCode(0x0300) + '-' + String.fromCharCode(0x036f) + ']', 'g');

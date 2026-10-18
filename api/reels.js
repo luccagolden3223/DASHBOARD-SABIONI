@@ -7,7 +7,8 @@ import { Redis } from '@upstash/redis';
 const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
 const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
 
-const REEL_IDS = Array.from({ length: 20 }, (_, i) => String(i + 1).padStart(2, '0'));
+// 01-20 = Ciclo 1 (Guia 1), 21-40 = Ciclo 2 (Guia 2, numerado 01-20 no painel).
+const REEL_IDS = Array.from({ length: 40 }, (_, i) => String(i + 1).padStart(2, '0'));
 const STATE_KEY = 'reels40mais:state:v1';
 
 function defaultState() {
